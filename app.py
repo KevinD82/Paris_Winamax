@@ -44,6 +44,136 @@ else:
 
     df_filtered_date = df_matches[df_matches["date"] == selected_date]
 
+    # --- NOUVEAU : Paramètres Bankroll & Kelly ---
+    st.sidebar.divider()
+    st.sidebar.header("💰 Bankroll Management")
+    bankroll = st.sidebar.number_input(
+        "Capital total (€)", min_value=10.0, value=500.0, step=50.0
+    )
+    kelly_fraction = st.sidebar.selectbox(
+        "Sécurité Kelly",
+        options=[0.25, 0.50, 1.0],
+        format_func=lambda x: (
+            f"Kelly à {int(x * 100)}% (Recommandé)"
+            if x == 0.25
+            else (
+                f"Kelly à {int(x * 100)}% (Modéré)"
+                if x == 0.50
+                else "Kelly 100% (Agressif)"
+            )
+        ),
+        index=0,
+    )
+    st.sidebar.caption(
+        "Le critère de Kelly calcule la mise optimale pour faire croître ton capital sans risquer la faillite."
+    )
+    st.sidebar.divider()
+    # ---------------------------------------------
+
+    # --- NOUVEAU : SECTION GLOBALE DE LA JOURNÉE (TOP VALUE BETS) ---
+    with st.expander(
+        f"🔥 Voir tous les Value Bets & Paris de la journée ({selected_date})",
+        expanded=False,
+    ):
+        st.markdown(f"### 🌟 Meilleurs Value Bets détectés pour le {selected_date}")
+        all_day_bets = []
+
+        if model_data and not df_filtered_date.empty:
+            stats = model_data.get("stats", {})
+            features = model_data["features"]
+
+            for _, r_match in df_filtered_date.iterrows():
+                m_name = r_match["match"]
+                if " - " not in m_name:
+                    continue
+                h_team, a_team = m_name.split(" - ", 1)
+
+                h_stats = next(
+                    (
+                        v
+                        for k, v in stats.items()
+                        if k.lower() in h_team.lower() or h_team.lower() in k.lower()
+                    ),
+                    None,
+                )
+                a_stats = next(
+                    (
+                        v
+                        for k, v in stats.items()
+                        if k.lower() in a_team.lower() or a_team.lower() in k.lower()
+                    ),
+                    None,
+                )
+
+                if h_stats and a_stats:
+                    h_gf = np.mean(h_stats["goals_scored"][-5:])
+                    h_ga = np.mean(h_stats["goals_conceded"][-5:])
+                    a_gf = np.mean(a_stats["goals_scored"][-5:])
+                    a_ga = np.mean(a_stats["goals_conceded"][-5:])
+
+                    X_m = pd.DataFrame([[h_gf, h_ga, a_gf, a_ga]], columns=features)
+                    p_1n2 = model_data["model_1n2"].predict_proba(X_m)[0]
+                    p_N, p_1, p_2 = p_1n2[0], p_1n2[1], p_1n2[2]
+
+                    e_1 = (p_1 * r_match["cote_1"]) - 1
+                    e_N = (p_N * r_match["cote_N"]) - 1
+                    e_2 = (p_2 * r_match["cote_2"]) - 1
+
+                    best_ev = max(e_1, e_N, e_2)
+                    if best_ev > 0.05:
+                        if best_ev == e_1:
+                            b_type, b_cote, b_prob, b_team_name = (
+                                f"Victoire {h_team}",
+                                r_match["cote_1"],
+                                p_1,
+                                h_team,
+                            )
+                        elif best_ev == e_N:
+                            b_type, b_cote, b_prob, b_team_name = (
+                                "Match Nul",
+                                r_match["cote_N"],
+                                p_N,
+                                "Nul",
+                            )
+                        else:
+                            b_type, b_cote, b_prob, b_team_name = (
+                                f"Victoire {a_team}",
+                                r_match["cote_2"],
+                                p_2,
+                                a_team,
+                            )
+
+                        if b_prob >= 0.40:
+                            k_f = ((b_prob * b_cote) - 1) / (b_cote - 1)
+                            k_stake = max(0.0, bankroll * k_f * kelly_fraction)
+                            all_day_bets.append({
+                                "Compétition": r_match["league"],
+                                "Match": m_name,
+                                "Heure": r_match["heure"],
+                                "Pari conseillé": b_type,
+                                "Cote": b_cote,
+                                "Probabilité IA": f"{b_prob * 100:.1f}%",
+                                "EV (Value)": f"+{best_ev * 100:.1f}%",
+                                "Mise conseillée": f"{k_stake:.2f} € ({k_stake / bankroll * 100:.1f}% cap.)",
+                                "_ev_val": best_ev,
+                            })
+
+        if all_day_bets:
+            df_all_bets = (
+                pd
+                .DataFrame(all_day_bets)
+                .sort_values(by="_ev_val", ascending=False)
+                .drop(columns=["_ev_val"])
+            )
+            st.dataframe(df_all_bets, use_container_width=True, hide_index=True)
+        else:
+            st.info(
+                "Aucun Value Bet majeur filtré avec les critères stricts (EV > 5% & Proba >= 40%) pour cette date."
+            )
+
+    st.divider()
+    # -------------------------------------------------------------
+
     available_leagues = ["Tous les championnats"] + sorted(
         list(set(df_filtered_date["league"].tolist()))
     )
@@ -93,8 +223,7 @@ else:
             (
                 v
                 for k, v in stats.items()
-                if k.lower() in home_team.lower()
-                or home_team.lower() in k.lower()
+                if k.lower() in home_team.lower() or home_team.lower() in k.lower()
             ),
             None,
         )
@@ -102,8 +231,7 @@ else:
             (
                 v
                 for k, v in stats.items()
-                if k.lower() in away_team.lower()
-                or away_team.lower() in k.lower()
+                if k.lower() in away_team.lower() or away_team.lower() in k.lower()
             ),
             None,
         )
@@ -115,9 +243,7 @@ else:
             a_gf = np.mean(a_stats["goals_scored"][-5:])
             a_ga = np.mean(a_stats["goals_conceded"][-5:])
 
-            X_match = pd.DataFrame(
-                [[h_gf, h_ga, a_gf, a_ga]], columns=features
-            )
+            X_match = pd.DataFrame([[h_gf, h_ga, a_gf, a_ga]], columns=features)
 
             probs_1n2 = model_data["model_1n2"].predict_proba(X_match)[0]
             prob_N, prob_1, prob_2 = probs_1n2[0], probs_1n2[1], probs_1n2[2]
@@ -138,21 +264,21 @@ else:
         c1.metric(
             f"1 - {match_data['match'].split(' - ')[0]}",
             match_data["cote_1"],
-            delta=f"Prob: {prob_1*100:.1f}% | EV: {ev_1*100:+.1f}%"
+            delta=f"Prob: {prob_1 * 100:.1f}% | EV: {ev_1 * 100:+.1f}%"
             if prob_1
             else None,
         )
         cN.metric(
             "N - Nul",
             match_data["cote_N"],
-            delta=f"Prob: {prob_N*100:.1f}% | EV: {ev_N*100:+.1f}%"
+            delta=f"Prob: {prob_N * 100:.1f}% | EV: {ev_N * 100:+.1f}%"
             if prob_N
             else None,
         )
         c2.metric(
             f"2 - {match_data['match'].split(' - ')[1] if ' - ' in match_data['match'] else 'Ext'}",
             match_data["cote_2"],
-            delta=f"Prob: {prob_2*100:.1f}% | EV: {ev_2*100:+.1f}%"
+            delta=f"Prob: {prob_2 * 100:.1f}% | EV: {ev_2 * 100:+.1f}%"
             if prob_2
             else None,
         )
@@ -187,14 +313,21 @@ else:
                         else match_data["cote_2"]
                     )
                 )
+
+                # --- CALCUL KELLY ---
+                kelly_f = ((best_1n2_prob * best_cote) - 1) / (best_cote - 1)
+                kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
+                # --------------------
+
                 best_recommendations.append({
                     "Type": "Résultat 1N2",
                     "Pari": f"Victoire {best_team}"
                     if best_team != "Match Nul"
                     else "Match Nul",
                     "Cote": best_cote,
-                    "Probabilité": f"{best_1n2_prob*100:.1f}%",
-                    "EV (Value)": f"+{best_1n2_ev*100:.1f}%",
+                    "Probabilité": f"{best_1n2_prob * 100:.1f}%",
+                    "EV (Value)": f"+{best_1n2_ev * 100:.1f}%",
+                    "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                 })
 
         # 2. Analyse BTTS
@@ -205,22 +338,28 @@ else:
             if cote_b_oui:
                 ev_b_oui = (prob_btts_oui * cote_b_oui) - 1
                 if ev_b_oui > 0.05:
+                    kelly_f = ((prob_btts_oui * cote_b_oui) - 1) / (cote_b_oui - 1)
+                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
                     best_recommendations.append({
                         "Type": "Les 2 équipes marquent",
                         "Pari": "Oui",
                         "Cote": cote_b_oui,
-                        "Probabilité": f"{prob_btts_oui*100:.1f}%",
-                        "EV (Value)": f"+{ev_b_oui*100:.1f}%",
+                        "Probabilité": f"{prob_btts_oui * 100:.1f}%",
+                        "EV (Value)": f"+{ev_b_oui * 100:.1f}%",
+                        "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                     })
             if cote_b_non:
                 ev_b_non = (prob_btts_non * cote_b_non) - 1
                 if ev_b_non > 0.05:
+                    kelly_f = ((prob_btts_non * cote_b_non) - 1) / (cote_b_non - 1)
+                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
                     best_recommendations.append({
                         "Type": "Les 2 équipes marquent",
                         "Pari": "Non",
                         "Cote": cote_b_non,
-                        "Probabilité": f"{prob_btts_non*100:.1f}%",
-                        "EV (Value)": f"+{ev_b_non*100:.1f}%",
+                        "Probabilité": f"{prob_btts_non * 100:.1f}%",
+                        "EV (Value)": f"+{ev_b_non * 100:.1f}%",
+                        "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                     })
 
         # 3. Analyse Buteurs principaux
@@ -241,7 +380,7 @@ else:
                     "Type": "Buteur le plus probable",
                     "Pari": best_scorer[0],
                     "Cote": best_scorer[1],
-                    "Probabilité Implicite": f"{best_scorer[2]*100:.1f}%",
+                    "Probabilité Implicite": f"{best_scorer[2] * 100:.1f}%",
                     "EV (Value)": "N/A (Proba Bookmaker)",
                 })
 
@@ -276,17 +415,17 @@ else:
         col_b_oui.metric(
             "Oui",
             f"Cote: {cote_b_oui}",
-            delta=f"IA: {prob_btts_oui*100:.1f}% | EV: {ev_b_oui*100:+.1f}%"
+            delta=f"IA: {prob_btts_oui * 100:.1f}% | EV: {ev_b_oui * 100:+.1f}%"
             if ev_b_oui is not None
-            else (f"IA: {prob_btts_oui*100:.1f}%" if prob_btts_oui else None),
+            else (f"IA: {prob_btts_oui * 100:.1f}%" if prob_btts_oui else None),
         )
 
         col_b_non.metric(
             "Non",
             f"Cote: {cote_b_non}",
-            delta=f"IA: {prob_btts_non*100:.1f}% | EV: {ev_b_non*100:+.1f}%"
+            delta=f"IA: {prob_btts_non * 100:.1f}% | EV: {ev_b_non * 100:+.1f}%"
             if ev_b_non is not None
-            else (f"IA: {prob_btts_non*100:.1f}%" if prob_btts_non else None),
+            else (f"IA: {prob_btts_non * 100:.1f}%" if prob_btts_non else None),
         )
 
         st.divider()
@@ -311,22 +450,18 @@ else:
                 rows = []
                 for val, cotes in sorted(
                     parsed_ou.items(),
-                    key=lambda x: float(x[0].replace(",", "."))
-                    if x[0].replace(",", ".").replace(".", "", 1).isdigit()
-                    else 99,
+                    key=lambda x: (
+                        float(x[0].replace(",", "."))
+                        if x[0].replace(",", ".").replace(".", "", 1).isdigit()
+                        else 99
+                    ),
                 ):
                     c_plus = cotes.get("Plus")
                     c_moins = cotes.get("Moins")
 
-                    txt_plus = (
-                        f"{c_plus:.2f} ({100/c_plus:.1f}%)"
-                        if c_plus
-                        else "-"
-                    )
+                    txt_plus = f"{c_plus:.2f} ({100 / c_plus:.1f}%)" if c_plus else "-"
                     txt_moins = (
-                        f"{c_moins:.2f} ({100/c_moins:.1f}%)"
-                        if c_moins
-                        else "-"
+                        f"{c_moins:.2f} ({100 / c_moins:.1f}%)" if c_moins else "-"
                     )
 
                     rows.append({
@@ -393,17 +528,17 @@ else:
                 c_d = bets_p.get("decisif")
 
                 txt_b = (
-                    f"{c_b:.2f} ({100/c_b:.1f}%)"
+                    f"{c_b:.2f} ({100 / c_b:.1f}%)"
                     if (c_b and isinstance(c_b, float))
                     else "-"
                 )
                 txt_p = (
-                    f"{c_p:.2f} ({100/c_p:.1f}%)"
+                    f"{c_p:.2f} ({100 / c_p:.1f}%)"
                     if (c_p and isinstance(c_p, float))
                     else "-"
                 )
                 txt_d = (
-                    f"{c_d:.2f} ({100/c_d:.1f}%)"
+                    f"{c_d:.2f} ({100 / c_d:.1f}%)"
                     if (c_d and isinstance(c_d, float))
                     else "-"
                 )
@@ -440,9 +575,7 @@ else:
                         styles[col] = "text-align: center;"
                 return styles
 
-            styled_scorers = df_scorers.style.apply(
-                highlight_max_scorer, axis=1
-            )
+            styled_scorers = df_scorers.style.apply(highlight_max_scorer, axis=1)
 
             col_sc_box, _ = st.columns([4, 2])
             with col_sc_box:

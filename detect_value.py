@@ -67,9 +67,7 @@ def find_value_bets():
         )
 
         # Formatage sous forme de DataFrame pour respecter le modèle
-        features_df = pd.DataFrame(
-            [[h_gf, h_ga, a_gf, a_ga]], columns=feature_names
-        )
+        features_df = pd.DataFrame([[h_gf, h_ga, a_gf, a_ga]], columns=feature_names)
 
         # Prédiction
         probs = model.predict_proba(features_df)[0]
@@ -82,41 +80,48 @@ def find_value_bets():
 
         # Seuil de déclenchement : EV > +3%
         threshold = 0.03
+        BANKROLL = 500.0  # Capital de référence
+        KELLY_FRACTION = 0.25  # Kelly à 25% (sécurisé)
 
         if ev_1 > threshold:
+            k_f = ((prob_1 * row["cote_1"]) - 1) / (row["cote_1"] - 1)
+            stake = round(BANKROLL * k_f * KELLY_FRACTION, 2)
             value_bets.append({
                 "match": match,
                 "pari": f"Victoire {home_team}",
                 "cote": row["cote_1"],
                 "prob_ml_%": round(prob_1 * 100, 1),
                 "ev_%": round(ev_1 * 100, 2),
+                "mise_conseillee_€": max(0.0, stake),
             })
         if ev_N > threshold:
+            k_f = ((prob_N * row["cote_N"]) - 1) / (row["cote_N"] - 1)
+            stake = round(BANKROLL * k_f * KELLY_FRACTION, 2)
             value_bets.append({
                 "match": match,
                 "pari": "Match Nul",
                 "cote": row["cote_N"],
                 "prob_ml_%": round(prob_N * 100, 1),
                 "ev_%": round(ev_N * 100, 2),
+                "mise_conseillee_€": max(0.0, stake),
             })
         if ev_2 > threshold:
+            k_f = ((prob_2 * row["cote_2"]) - 1) / (row["cote_2"] - 1)
+            stake = round(BANKROLL * k_f * KELLY_FRACTION, 2)
             value_bets.append({
                 "match": match,
                 "pari": f"Victoire {away_team}",
                 "cote": row["cote_2"],
                 "prob_ml_%": round(prob_2 * 100, 1),
                 "ev_%": round(ev_2 * 100, 2),
+                "mise_conseillee_€": max(0.0, stake),
             })
 
     results_df = pd.DataFrame(value_bets)
 
     if not results_df.empty:
         print("\n🚀 VALUE BETS DÉTECTÉS (Espérance de gain positive) :")
-        print(
-            results_df.sort_values(by="ev_%", ascending=False).to_string(
-                index=False
-            )
-        )
+        print(results_df.sort_values(by="ev_%", ascending=False).to_string(index=False))
         results_df.to_csv("value_bets.csv", index=False, encoding="utf-8-sig")
         print("\n📁 Résultat exporté dans 'value_bets.csv'")
     else:
