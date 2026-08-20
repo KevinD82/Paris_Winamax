@@ -1,0 +1,764 @@
+﻿match,pari,cote,prob_ml_%,ev_%
+Charlotte FC - DC United,Match Nul,3.55,31.6,12.03
+Charlotte FC - DC United,Victoire DC United,3.45,37.6,29.6
+FC Cincinnati - Seattle Sounders,Match Nul,4.0,31.6,26.23
+FC Cincinnati - Seattle Sounders,Victoire Seattle Sounders,3.35,37.6,25.84
+Inter Miami CF - Toronto FC,Match Nul,5.3,31.6,67.26
+Inter Miami CF - Toronto FC,Victoire Toronto FC,5.8,37.6,117.88
+Montréal - Los Angeles Galaxy,Match Nul,3.55,31.6,12.03
+Montréal - Los Angeles Galaxy,Victoire Los Angeles Galaxy,2.8,37.6,5.18
+New York Red Bulls - Chicago Fire,Match Nul,3.85,31.6,21.5
+Orlando City SC - Real Salt Lake,Match Nul,3.95,31.6,24.65
+Orlando City SC - Real Salt Lake,Victoire Real Salt Lake,3.05,37.6,14.57
+Austin FC - Philadelphia Union,Match Nul,3.5,31.6,10.45
+Nashville SC - Columbus Crew,Match Nul,3.65,31.6,15.19
+Nashville SC - Columbus Crew,Victoire Columbus Crew,3.65,37.6,37.11
+St. Louis City - Houston Dynamo,Match Nul,3.5,31.6,10.45
+St. Louis City - Houston Dynamo,Victoire Houston Dynamo,3.0,37.6,12.7
+Vancouver - FC Dallas,Match Nul,4.4,31.6,38.85
+Vancouver - FC Dallas,Victoire FC Dallas,5.2,37.6,95.34
+Los Angeles FC - Portland Timbers,Match Nul,4.3,31.6,35.7
+Los Angeles FC - Portland Timbers,Victoire Portland Timbers,4.1,37.6,54.02
+San Diego FC - Colorado Rapids,Match Nul,3.7,31.6,16.76
+San Diego FC - Colorado Rapids,Victoire Colorado Rapids,3.2,37.6,20.21
+San Jose Earthquakes - Minnesota United FC,Match Nul,3.65,31.6,15.19
+San Jose Earthquakes - Minnesota United FC,Victoire Minnesota United FC,2.85,37.6,7.06
+New England Revolution - New York City FC,Match Nul,3.45,31.6,8.87
+Atlanta United FC - Kansas City,Match Nul,3.95,31.6,24.65
+Atlanta United FC - Kansas City,Victoire Kansas City,3.95,37.6,48.38
+Bohemians - Derry City,Victoire Derry City,3.25,37.6,22.09
+Drogheda - St Patrick's,Victoire Drogheda,4.4,30.9,35.86
+Drogheda - St Patrick's,Match Nul,3.55,31.6,12.03
+Dundalk - Galway United,Match Nul,3.75,31.6,18.34
+Dundalk - Galway United,Victoire Galway United,3.8,37.6,42.75
+Fluminense - Remo,Match Nul,4.3,31.6,35.7
+Fluminense - Remo,Victoire Remo,6.25,37.6,134.78
+Botafogo - Athletico Paranaense,Victoire Athletico Paranaense,3.05,37.6,14.57
+Santos - Mirassol,Match Nul,3.35,31.6,5.72
+Santos - Mirassol,Victoire Mirassol,3.6,37.6,35.23
+Palmeiras - Vasco da Gama,Match Nul,3.6,31.6,13.61
+Palmeiras - Vasco da Gama,Victoire Vasco da Gama,4.6,37.6,72.8
+Bragantino SP - Grêmio,Match Nul,3.45,31.6,8.87
+Bragantino SP - Grêmio,Victoire Grêmio,4.0,37.6,50.26
+Internacional  - Atlético Mineiro,Victoire Atlético Mineiro,3.25,37.6,22.09
+Flamengo - Botafogo,Match Nul,4.0,31.6,26.23
+Flamengo - Botafogo,Victoire Botafogo,5.5,37.6,106.61
+Sao Paulo FC - Bragantino SP,Victoire Bragantino SP,3.2,37.6,20.21
+Corinthians - Santos,Victoire Santos,3.9,37.6,46.5
+Mirassol - Palmeiras,Victoire Mirassol,3.55,30.9,9.61
+Atlético Mineiro - Vitoria,Match Nul,3.5,31.6,10.45
+Atlético Mineiro - Vitoria,Victoire Vitoria,4.6,37.6,72.8
+Grêmio - Chapecoense,Match Nul,3.85,31.6,21.5
+Grêmio - Chapecoense,Victoire Chapecoense,5.4,37.6,102.85
+Athletico Paranaense - Fluminense,Victoire Fluminense,3.0,37.6,12.7
+Bahia  - Internacional ,Victoire Internacional ,3.55,37.6,33.36
+Remo - Coritiba,Victoire Coritiba,2.75,37.6,3.3
+Bodø/Glimt - Rosenborg,Match Nul,5.1,31.6,60.94
+Bodø/Glimt - Rosenborg,Victoire Rosenborg,6.0,37.6,125.39
+Ham-Kam - Kristiansund,Match Nul,3.35,31.6,5.72
+Ham-Kam - Kristiansund,Victoire Kristiansund,3.35,37.6,25.84
+Lillestrom SK - Fredrikstad FK,Match Nul,3.9,31.6,23.08
+Lillestrom SK - Fredrikstad FK,Victoire Fredrikstad FK,4.0,37.6,50.26
+Sandefjord - Brann,Match Nul,3.5,31.6,10.45
+Tromso - Sarpsborg,Match Nul,3.8,31.6,19.92
+Tromso - Sarpsborg,Victoire Sarpsborg,4.6,37.6,72.8
+Viking - Aalesund,Match Nul,5.8,31.6,83.04
+Viking - Aalesund,Victoire Aalesund,8.0,37.6,200.52
+Vålerenga - Molde,Match Nul,3.6,31.6,13.61
+Seinäjoen - Lahti,Match Nul,3.35,31.6,5.72
+TPS Turku - Inter Turku,Victoire TPS Turku,3.45,30.9,6.53
+TPS Turku - Inter Turku,Match Nul,3.4,31.6,7.3
+Jaro - AC Oulu,Match Nul,3.35,31.6,5.72
+FC Ilves - Vaasa,Match Nul,3.5,31.6,10.45
+KuPS - Mariehamn,Match Nul,5.7,31.6,79.88
+KuPS - Mariehamn,Victoire Mariehamn,7.75,37.6,191.13
+HJK Helsinki - IF Gnistan,Match Nul,4.1,31.6,29.39
+HJK Helsinki - IF Gnistan,Victoire IF Gnistan,4.1,37.6,54.02
+Hammarby IF - GAIS Göteborg,Match Nul,4.3,31.6,35.7
+Hammarby IF - GAIS Göteborg,Victoire GAIS Göteborg,5.5,37.6,106.61
+Örgryte IS - Halmstad,Match Nul,3.5,31.6,10.45
+Örgryte IS - Halmstad,Victoire Halmstad,3.15,37.6,18.33
+Malmö - Djurgardens,Match Nul,3.45,31.6,8.87
+Brommapojkarna - Degerfors IF,Match Nul,3.3,31.6,4.14
+Brommapojkarna - Degerfors IF,Victoire Degerfors IF,3.1,37.6,16.45
+IK Sirius - Häcken,Match Nul,3.85,31.6,21.5
+IK Sirius - Häcken,Victoire Häcken,3.3,37.6,23.97
+Vasteras SK - Kalmar,Match Nul,3.3,31.6,4.14
+Universidad De Chile - Colo Colo,Match Nul,3.3,31.6,4.14
+Universidad Catolica - Nublense,Match Nul,3.7,31.6,16.76
+Universidad Catolica - Nublense,Victoire Nublense,4.5,37.6,69.04
+La Serena - Cobresal,Match Nul,3.65,31.6,15.19
+La Serena - Cobresal,Victoire Cobresal,3.95,37.6,48.38
+Everton - Universidad de Concepción,Match Nul,3.65,31.6,15.19
+Everton - Universidad de Concepción,Victoire Universidad de Concepción,4.0,37.6,50.26
+Audax Italiano - Unión La Calera,Match Nul,3.35,31.6,5.72
+Audax Italiano - Unión La Calera,Victoire Unión La Calera,3.7,37.6,38.99
+Huachipato - Limache,Match Nul,3.45,31.6,8.87
+FC Anyang - FC Séoul,Victoire FC Anyang,3.5,30.9,8.07
+Jeonbuk Motors - Ulsan HD FC,Match Nul,3.4,31.6,7.3
+Jeonbuk Motors - Ulsan HD FC,Victoire Ulsan HD FC,3.0,37.6,12.7
+Gwangju FC - Incheon United,Victoire Gwangju FC,4.0,30.9,23.51
+Iberia 1999 - Dinamo Tbilissi,Victoire Dinamo Tbilissi,2.8,37.6,5.18
+Keflavik - IBV Vestmannaeyjar,Match Nul,3.8,31.6,19.92
+IA Akranes - FH Hafnarfjordur,Match Nul,3.65,31.6,15.19
+IA Akranes - FH Hafnarfjordur,Victoire FH Hafnarfjordur,2.75,37.6,3.3
+KA Akureyri - KR Reykjavik,Victoire KA Akureyri,4.1,30.9,26.6
+KA Akureyri - KR Reykjavik,Match Nul,5.0,31.6,57.79
+Stjarnan - Þór Akureyri,Match Nul,5.0,31.6,57.79
+Stjarnan - Þór Akureyri,Victoire Þór Akureyri,4.8,37.6,80.31
+Breidablik Kopavogur - Fram Reykjavik,Match Nul,3.8,31.6,19.92
+Levadia Tallinn - Trans Narva,Match Nul,7.0,31.6,120.9
+Levadia Tallinn - Trans Narva,Victoire Trans Narva,10.0,37.6,275.65
+Harju JK Laagri - Nomme Kalju,Victoire Harju JK Laagri,4.0,30.9,23.51
+Harju JK Laagri - Nomme Kalju,Match Nul,4.0,31.6,26.23
+Tammeka Tartu - Kuressaare,Match Nul,3.65,31.6,15.19
+Tammeka Tartu - Kuressaare,Victoire Kuressaare,3.4,37.6,27.72
+Paide Linnameeskond - Nomme United,Match Nul,4.2,31.6,32.54
+Paide Linnameeskond - Nomme United,Victoire Nomme United,4.2,37.6,57.77
+Parnu Vaprus - Flora Tallinn,Victoire Parnu Vaprus,4.8,30.9,48.21
+Parnu Vaprus - Flora Tallinn,Match Nul,4.2,31.6,32.54
+FK Auda - Tukums 2000,Match Nul,3.85,31.6,21.5
+FK Auda - Tukums 2000,Victoire Tukums 2000,4.3,37.6,61.53
+Super Nova - BFC Daugavpils,Match Nul,3.45,31.6,8.87
+Ogre United - Jelgava,Victoire Ogre United,3.35,30.9,3.44
+Ogre United - Jelgava,Match Nul,3.5,31.6,10.45
+FK Liepaja - Grobinas SC,Match Nul,3.75,31.6,18.34
+FK Liepaja - Grobinas SC,Victoire Grobinas SC,4.1,37.6,54.02
+Rigas Futbola Skola - Riga FC,Match Nul,3.3,31.6,4.14
+HFX Wanderers - Vancouver FC,Match Nul,3.4,31.6,7.3
+Cavalry - Atlético Ottawa,Match Nul,4.1,31.6,29.39
+Cavalry - Atlético Ottawa,Victoire Atlético Ottawa,5.0,37.6,87.83
+Forge - Pacific,Match Nul,5.3,31.6,67.26
+Forge - Pacific,Victoire Pacific,7.5,37.6,181.74
+Inter Toronto - Supra du Québec,Match Nul,3.5,31.6,10.45
+LDU Quito - Emelec,Match Nul,3.75,31.6,18.34
+LDU Quito - Emelec,Victoire Emelec,5.1,37.6,91.58
+Técnico Universitario - Guayaquil City,Victoire Guayaquil City,3.65,37.6,37.11
+Leones - Independiente Del Valle,Victoire Leones,4.3,30.9,32.77
+Leones - Independiente Del Valle,Match Nul,3.65,31.6,15.19
+Deportivo Cuenca - Mushuc Runa,Victoire Mushuc Runa,3.0,37.6,12.7
+Universidad Católica (EQU) - Manta FC,Match Nul,4.9,31.6,54.63
+Universidad Católica (EQU) - Manta FC,Victoire Manta FC,7.75,37.6,191.13
+Barcelona SC - Orense SC,Match Nul,3.45,31.6,8.87
+Barcelona SC - Orense SC,Victoire Orense SC,4.4,37.6,65.29
+Wuhan Three Towns - Tianjin Tigers,Match Nul,3.3,31.6,4.14
+Chengdu Rongcheng - Shanghai Shenhua,Match Nul,3.85,31.6,21.5
+Chengdu Rongcheng - Shanghai Shenhua,Victoire Shanghai Shenhua,3.15,37.6,18.33
+Shenzhen Peng City - Zhejiang Professional,Match Nul,3.5,31.6,10.45
+Beijing Guoan - Yunnan Yukun,Match Nul,4.8,31.6,51.48
+Beijing Guoan - Yunnan Yukun,Victoire Yunnan Yukun,4.7,37.6,76.56
+Qingdao West Coast - Shandong Taishan,Match Nul,3.45,31.6,8.87
+Liaoning Tieren - Henan FC,Match Nul,3.45,31.6,8.87
+Shanghai Port - Qingdao Hainiu,Match Nul,5.2,31.6,64.1
+Shanghai Port - Qingdao Hainiu,Victoire Qingdao Hainiu,6.25,37.6,134.78
+Borussia Dortmund - Bayern Munich,Victoire Borussia Dortmund,4.6,30.9,42.03
+Borussia Dortmund - Bayern Munich,Match Nul,4.0,31.6,26.23
+Botafogo - Club Sportivo Cienciano,Match Nul,8.5,31.6,168.24
+Botafogo - Club Sportivo Cienciano,Victoire Club Sportivo Cienciano,13.0,37.6,388.35
+Corinthians - Rosario Central,Victoire Rosario Central,4.0,37.6,50.26
+LDU Quito - Mirassol,Match Nul,3.7,31.6,16.76
+LDU Quito - Mirassol,Victoire Mirassol,5.3,37.6,99.1
+Hegelmann - Banga,Victoire Hegelmann,3.35,30.9,3.44
+Hegelmann - Banga,Match Nul,3.35,31.6,5.72
+Sūduva - Panevėžys,Match Nul,4.0,31.6,26.23
+Sūduva - Panevėžys,Victoire Panevėžys,5.8,37.6,117.88
+Žalgiris - Džiugas,Match Nul,3.8,31.6,19.92
+Žalgiris - Džiugas,Victoire Džiugas,4.3,37.6,61.53
+TransINVEST - Šiauliai,Match Nul,4.0,31.6,26.23
+TransINVEST - Šiauliai,Victoire Šiauliai,4.7,37.6,76.56
+NK Rudeš - Lokomotiva Zagreb,Victoire NK Rudeš,5.2,30.9,60.56
+NK Rudeš - Lokomotiva Zagreb,Match Nul,4.4,31.6,38.85
+Hajduk Split - Osijek,Match Nul,3.35,31.6,5.72
+Hajduk Split - Osijek,Victoire Osijek,3.6,37.6,35.23
+Rijeka - Istra 1961,Match Nul,4.2,31.6,32.54
+Rijeka - Istra 1961,Victoire Istra 1961,5.7,37.6,114.12
+Dinamo Zagreb - NK Varazdin,Match Nul,4.9,31.6,54.63
+Dinamo Zagreb - NK Varazdin,Victoire NK Varazdin,6.5,37.6,144.17
+Aarhus GF - Odense,Match Nul,3.75,31.6,18.34
+Aarhus GF - Odense,Victoire Odense,3.75,37.6,40.87
+Sønderjyske - Nordsjælland,Victoire Sønderjyske,3.35,30.9,3.44
+Sønderjyske - Nordsjælland,Match Nul,3.7,31.6,16.76
+Midtjylland - Randers,Match Nul,4.2,31.6,32.54
+Midtjylland - Randers,Victoire Randers,5.1,37.6,91.58
+Viborg - Copenhague,Match Nul,3.5,31.6,10.45
+Brøndby - Silkeborg,Match Nul,4.4,31.6,38.85
+Brøndby - Silkeborg,Victoire Silkeborg,5.3,37.6,99.1
+Atalanta Bergame - Sassuolo,Match Nul,4.4,31.6,38.85
+Atalanta Bergame - Sassuolo,Victoire Sassuolo,5.5,37.6,106.61
+Bologne - Lazio Rome,Victoire Lazio Rome,3.3,37.6,23.97
+Frosinone - Juventus Turin,Victoire Frosinone,6.25,30.9,92.98
+Frosinone - Juventus Turin,Match Nul,4.7,31.6,48.32
+Genoa - Naples,Victoire Genoa,4.6,30.9,42.03
+Genoa - Naples,Match Nul,3.3,31.6,4.14
+Inter Milan - Monza,Match Nul,6.75,31.6,113.02
+Inter Milan - Monza,Victoire Monza,11.5,37.6,332.0
+Parme - Cagliari,Victoire Cagliari,2.95,37.6,10.82
+AS Rome - Fiorentina,Match Nul,4.1,31.6,29.39
+AS Rome - Fiorentina,Victoire Fiorentina,5.4,37.6,102.85
+Torino - Milan AC,Victoire Torino,4.2,30.9,29.68
+Torino - Milan AC,Match Nul,3.75,31.6,18.34
+Udinese - Côme,Victoire Udinese,4.3,30.9,32.77
+Udinese - Côme,Match Nul,3.6,31.6,13.61
+Venise - Lecce,Victoire Lecce,3.2,37.6,20.21
+SC Preussen Münster - Karlsruhe,Match Nul,3.45,31.6,8.87
+Würzburger Kickers - FC Cologne,Victoire Würzburger Kickers,6.5,30.9,100.7
+Würzburger Kickers - FC Cologne,Match Nul,5.1,31.6,60.94
+VSG Altglienicke - Wolfsbourg,Victoire VSG Altglienicke,8.5,30.9,162.45
+VSG Altglienicke - Wolfsbourg,Match Nul,6.0,31.6,89.35
+FC Phonix Lubeck - Paderborn,Victoire FC Phonix Lubeck,14.5,30.9,347.72
+FC Phonix Lubeck - Paderborn,Match Nul,7.75,31.6,144.57
+Westfalia Rhynern - Dynamo Dresden,Victoire Westfalia Rhynern,13.5,30.9,316.84
+Westfalia Rhynern - Dynamo Dresden,Match Nul,8.0,31.6,152.46
+SV Waldhof Mannheim - Kaiserslautern,Match Nul,3.8,31.6,19.92
+Munich 1860 - Holstein Kiel,Victoire Munich 1860,4.8,30.9,48.21
+Munich 1860 - Holstein Kiel,Match Nul,4.4,31.6,38.85
+Bahlinger SC - Magdebourg,Victoire Bahlinger SC,16.0,30.9,394.03
+Bahlinger SC - Magdebourg,Match Nul,10.0,31.6,215.58
+FC Carl Zeiss Iéna - Darmstadt,Victoire FC Carl Zeiss Iéna,4.5,30.9,38.95
+FC Carl Zeiss Iéna - Darmstadt,Match Nul,4.1,31.6,29.39
+Hansa Rostock - VfB Stuttgart,Victoire Hansa Rostock,9.0,30.9,177.89
+Hansa Rostock - VfB Stuttgart,Match Nul,6.0,31.6,89.35
+SC Verl - Hambourg,Victoire SC Verl,4.4,30.9,35.86
+SC Verl - Hambourg,Match Nul,4.4,31.6,38.85
+MSV Duisbourg - SV Elversberg,Match Nul,3.75,31.6,18.34
+Viktoria Cologne - Nuremberg,Victoire Viktoria Cologne,3.95,30.9,21.96
+Viktoria Cologne - Nuremberg,Match Nul,3.9,31.6,23.08
+1. FC Saarbrücken - Hertha Berlin,Match Nul,3.45,31.6,8.87
+VFB 1921 Krieschow - Mayence,Victoire VFB 1921 Krieschow,15.0,30.9,363.15
+VFB 1921 Krieschow - Mayence,Match Nul,14.0,31.6,341.81
+Energie Cottbus - Augsbourg,Victoire Energie Cottbus,4.3,30.9,32.77
+Energie Cottbus - Augsbourg,Match Nul,4.2,31.6,32.54
+Hallescher FC - Schalke 04,Victoire Hallescher FC,6.5,30.9,100.7
+Hallescher FC - Schalke 04,Match Nul,5.0,31.6,57.79
+SV Wehen Wiesbaden - Bayer Leverkusen,Victoire SV Wehen Wiesbaden,11.5,30.9,255.08
+SV Wehen Wiesbaden - Bayer Leverkusen,Match Nul,7.75,31.6,144.57
+SSV Jeddeloh II - Heidenheim,Victoire SSV Jeddeloh II,13.5,30.9,316.84
+SSV Jeddeloh II - Heidenheim,Match Nul,9.0,31.6,184.02
+SG Sonnenhof Grossaspach - Arminia Bielefeld,Victoire SG Sonnenhof Grossaspach,4.4,30.9,35.86
+SG Sonnenhof Grossaspach - Arminia Bielefeld,Match Nul,4.3,31.6,35.7
+Rot-Weiss Essen - St. Pauli,Match Nul,3.55,31.6,12.03
+Fortuna Dusseldorf - Fribourg,Victoire Fortuna Dusseldorf,5.1,30.9,57.47
+Fortuna Dusseldorf - Fribourg,Match Nul,4.5,31.6,42.01
+Eintracht Trier - RB Leipzig,Victoire Eintracht Trier,21.0,30.9,548.42
+Eintracht Trier - RB Leipzig,Match Nul,11.5,31.6,262.91
+Eintracht Brunswick - Union Berlin,Match Nul,3.6,31.6,13.61
+Erzgebirge Aue - TSG Hoffenheim,Victoire Erzgebirge Aue,12.5,30.9,285.96
+Erzgebirge Aue - TSG Hoffenheim,Match Nul,7.5,31.6,136.68
+VfL Osnabrück - Bayern Munich,Victoire VfL Osnabrück,14.5,30.9,347.72
+VfL Osnabrück - Bayern Munich,Match Nul,10.0,31.6,215.58
+Hamburg-Eimsbutteler Ballspiel Club 1911 - Borussia Dortmund,Victoire Hamburg-Eimsbutteler Ballspiel Club 1911,18.0,30.9,455.78
+Hamburg-Eimsbutteler Ballspiel Club 1911 - Borussia Dortmund,Match Nul,11.5,31.6,262.91
+Cherno More - FC Dunav Ruse,Match Nul,3.75,31.6,18.34
+Cherno More - FC Dunav Ruse,Victoire FC Dunav Ruse,4.8,37.6,80.31
+Levski Sofia - Spartak Varna,Match Nul,5.7,31.6,79.88
+Levski Sofia - Spartak Varna,Victoire Spartak Varna,9.5,37.6,256.87
+Lokomotiv Sofia - CSKA Sofia,Victoire Lokomotiv Sofia,4.5,30.9,38.95
+Lokomotiv Sofia - CSKA Sofia,Match Nul,3.9,31.6,23.08
+Ludogorets - Slavia Sofia,Match Nul,4.9,31.6,54.63
+Ludogorets - Slavia Sofia,Victoire Slavia Sofia,7.0,37.6,162.96
+FK Septemvri Sofia - FC CSKA 1948,Victoire FK Septemvri Sofia,5.2,30.9,60.56
+FK Septemvri Sofia - FC CSKA 1948,Match Nul,3.9,31.6,23.08
+Angers - Lille,Victoire Angers,4.7,31.4,47.75
+Le Havre - Monaco,Victoire Le Havre,3.5,34.5,20.87
+Le Havre - Monaco,Match Nul,3.95,26.4,4.38
+Le Mans - Brest,Victoire Le Mans,2.4,54.9,31.65
+Lens - Auxerre,Match Nul,4.4,23.8,4.78
+Lens - Auxerre,Victoire Auxerre,4.9,29.6,44.92
+Nice - Lorient,Victoire Nice,2.05,65.0,33.2
+Toulouse - Lyon,Victoire Toulouse,2.8,42.2,18.16
+Clermont - Dijon,Victoire Dijon,2.6,42.1,9.48
+Dunkerque - Montpellier,Victoire Dunkerque,2.35,60.4,41.95
+Metz - Laval,Victoire Laval,4.4,42.3,86.29
+Pau - Nancy,Victoire Nancy,3.1,37.6,16.45
+Saint-Étienne - Grenoble,Match Nul,4.7,31.6,48.32
+Saint-Étienne - Grenoble,Victoire Grenoble,7.0,37.6,162.96
+Sochaux - Guingamp,Match Nul,3.35,31.6,5.72
+Fortuna Sittard - AZ Alkmaar,Victoire Fortuna Sittard,4.3,30.9,32.77
+Fortuna Sittard - AZ Alkmaar,Match Nul,4.2,31.6,32.54
+Sparta Rotterdam - Utrecht,Match Nul,3.3,31.6,4.14
+Heerenveen - Zwolle,Match Nul,4.2,31.6,32.54
+Heerenveen - Zwolle,Victoire Zwolle,4.4,37.6,65.29
+GO Ahead Eagles - ADO La Haye,Match Nul,3.75,31.6,18.34
+GO Ahead Eagles - ADO La Haye,Victoire ADO La Haye,3.85,37.6,44.63
+PSV Eindhoven - Groningue,Match Nul,5.1,31.6,60.94
+PSV Eindhoven - Groningue,Victoire Groningue,5.9,37.6,121.63
+Cambuur - Feyenoord,Victoire Cambuur,7.25,30.9,123.86
+Cambuur - Feyenoord,Match Nul,5.5,31.6,73.57
+Trenčín - Spartak Trnava,Victoire Trenčín,3.55,30.9,9.61
+Trenčín - Spartak Trnava,Match Nul,3.55,31.6,12.03
+Ružomberok - Dukla Banská Bystrica,Match Nul,3.45,31.6,8.87
+Ružomberok - Dukla Banská Bystrica,Victoire Dukla Banská Bystrica,3.9,37.6,46.5
+DAC Dunajská Streda - Podbrezova,Match Nul,3.75,31.6,18.34
+DAC Dunajská Streda - Podbrezova,Victoire Podbrezova,3.7,37.6,38.99
+Zemplin Michalovce - Skalica,Match Nul,3.3,31.6,4.14
+Zemplin Michalovce - Skalica,Victoire Skalica,3.15,37.6,18.33
+Žilina - Komárno,Match Nul,3.6,31.6,13.61
+Žilina - Komárno,Victoire Komárno,4.0,37.6,50.26
+Košice - Slovan Bratislava,Match Nul,3.55,31.6,12.03
+Korona Kielce - Motor Lublin,Match Nul,3.4,31.6,7.3
+Korona Kielce - Motor Lublin,Victoire Motor Lublin,3.3,37.6,23.97
+KS Cracovie - Wieczysta Cracovie,Match Nul,3.35,31.6,5.72
+KS Cracovie - Wieczysta Cracovie,Victoire Wieczysta Cracovie,3.1,37.6,16.45
+Pogoń Szczecin - Wisla Cracovie,Match Nul,3.35,31.6,5.72
+GKS Katowice - Wisla Plock,Match Nul,3.35,31.6,5.72
+GKS Katowice - Wisla Plock,Victoire Wisla Plock,3.25,37.6,22.09
+Puebla - Santos Laguna,Match Nul,3.5,31.6,10.45
+Puebla - Santos Laguna,Victoire Santos Laguna,2.95,37.6,10.82
+FC Juarez - Club América,Victoire FC Juarez,3.65,30.9,12.7
+FC Juarez - Club América,Match Nul,3.6,31.6,13.61
+Guadalajara  - Club Tijuana,Match Nul,4.3,31.6,35.7
+Guadalajara  - Club Tijuana,Victoire Club Tijuana,5.2,37.6,95.34
+Querétaro - Toluca,Victoire Querétaro,3.55,30.9,9.61
+Querétaro - Toluca,Match Nul,3.7,31.6,16.76
+Leon - Monterrey,Match Nul,3.45,31.6,8.87
+Cruz Azul - Atlas,Match Nul,4.0,31.6,26.23
+Cruz Azul - Atlas,Victoire Atlas,5.2,37.6,95.34
+Tigres - Atlante,Match Nul,4.3,31.6,35.7
+Tigres - Atlante,Victoire Atlante,5.5,37.6,106.61
+Atletico San Luis - Pachuca,Match Nul,3.3,31.6,4.14
+U.N.A.M. - Necaxa,Match Nul,3.45,31.6,8.87
+U.N.A.M. - Necaxa,Victoire Necaxa,3.3,37.6,23.97
+Necaxa - Cruz Azul,Match Nul,3.5,31.6,10.45
+Club Tijuana - U.N.A.M.,Match Nul,3.3,31.6,4.14
+Radnicki 1923 - IMT,Victoire IMT,2.85,37.6,7.06
+Mladost Lucani - Partizan Belgrade,Victoire Mladost Lucani,3.8,30.9,17.33
+Mladost Lucani - Partizan Belgrade,Match Nul,3.5,31.6,10.45
+OFK Belgrade - Zemun,Match Nul,4.2,31.6,32.54
+OFK Belgrade - Zemun,Victoire Zemun,6.5,37.6,144.17
+Étoile Rouge Belgrade - Cukaricki,Match Nul,7.25,31.6,128.79
+Étoile Rouge Belgrade - Cukaricki,Victoire Cukaricki,12.0,37.6,350.78
+Vojvodina - Železničar,Match Nul,3.95,31.6,24.65
+Vojvodina - Železničar,Victoire Železničar,4.5,37.6,69.04
+Radnik Surdulica - Novi Pazar,Victoire Novi Pazar,3.45,37.6,29.6
+FC Tokyo - JEF United Chiba,Match Nul,3.95,31.6,24.65
+FC Tokyo - JEF United Chiba,Victoire JEF United Chiba,5.2,37.6,95.34
+Kashiwa Reysol - V-Varen Nagasaki,Match Nul,3.8,31.6,19.92
+Kashiwa Reysol - V-Varen Nagasaki,Victoire V-Varen Nagasaki,4.7,37.6,76.56
+Kashima Antlers - Avispa Fukuoka,Match Nul,3.3,31.6,4.14
+Kashima Antlers - Avispa Fukuoka,Victoire Avispa Fukuoka,4.5,37.6,69.04
+Kyoto Sanga FC - Mito HollyHock,Victoire Mito HollyHock,3.3,37.6,23.97
+Cerezo Osaka - Shimizu S-Pulse,Victoire Shimizu S-Pulse,2.8,37.6,5.18
+Fagiano Okayama - Tokyo Verdy,Victoire Tokyo Verdy,3.3,37.6,23.97
+Sanfrecce Hiroshima - Kawasaki Frontale,Match Nul,3.95,31.6,24.65
+Sanfrecce Hiroshima - Kawasaki Frontale,Victoire Kawasaki Frontale,4.2,37.6,57.77
+Machida Zelvia - Urawa Reds,Match Nul,3.35,31.6,5.72
+Machida Zelvia - Urawa Reds,Victoire Urawa Reds,4.1,37.6,54.02
+Thoune - Servette FC,Match Nul,3.5,31.6,10.45
+Lucerne - FC Lausanne,Match Nul,3.7,31.6,16.76
+Lucerne - FC Lausanne,Victoire FC Lausanne,3.1,37.6,16.45
+FC Zurich - FC Bâle,Match Nul,3.5,31.6,10.45
+Young Boys Berne - Vaduz,Match Nul,5.5,31.6,73.57
+Young Boys Berne - Vaduz,Victoire Vaduz,6.75,37.6,153.57
+Dundee United - Dundee FC,Victoire Dundee FC,3.05,37.6,14.57
+Standard Liège - RAAL La Louvière,Match Nul,3.4,31.6,7.3
+Standard Liège - RAAL La Louvière,Victoire RAAL La Louvière,3.7,37.6,38.99
+Zulte Waregem - Waasland-Beveren,Match Nul,3.35,31.6,5.72
+Zulte Waregem - Waasland-Beveren,Victoire Waasland-Beveren,3.2,37.6,20.21
+Charleroi - Malines,Match Nul,3.5,31.6,10.45
+Charleroi - Malines,Victoire Malines,3.95,37.6,48.38
+Royal Antwerp FC - Genk,Match Nul,3.3,31.6,4.14
+Lommel United - Westerlo,Match Nul,3.3,31.6,4.14
+Club Bruges - Cercle Bruges,Match Nul,5.7,31.6,79.88
+Club Bruges - Cercle Bruges,Victoire Cercle Bruges,6.75,37.6,153.57
+Arsenal - Coventry City,Match Nul,7.5,31.6,136.68
+Arsenal - Coventry City,Victoire Coventry City,13.0,37.6,388.35
+Hull City - Manchester United,Victoire Hull City,7.5,30.9,131.58
+Hull City - Manchester United,Match Nul,4.9,31.6,54.63
+Everton - Crystal Palace,Match Nul,3.4,31.6,7.3
+Everton - Crystal Palace,Victoire Crystal Palace,3.2,37.6,20.21
+Ipswich - Sunderland,Match Nul,3.3,31.6,4.14
+Nottingham Forest - Leeds,Match Nul,3.4,31.6,7.3
+Nottingham Forest - Leeds,Victoire Leeds,2.95,37.6,10.82
+Brentford - Tottenham,Match Nul,3.6,31.6,13.61
+Brighton - Aston Villa,Match Nul,3.65,31.6,15.19
+Brighton - Aston Villa,Victoire Aston Villa,2.95,37.6,10.82
+Manchester City - Bournemouth,Match Nul,5.0,31.6,57.79
+Manchester City - Bournemouth,Victoire Bournemouth,5.5,37.6,106.61
+Newcastle - Liverpool,Victoire Newcastle,3.5,30.9,8.07
+Newcastle - Liverpool,Match Nul,3.95,31.6,24.65
+Fulham - Chelsea,Victoire Fulham,3.5,30.9,8.07
+Fulham - Chelsea,Match Nul,3.75,31.6,18.34
+Ironi Tiberias - Hapoel Petah Tikva,Match Nul,3.3,31.6,4.14
+Hapoel Jerusalem - Maccabi Tel Aviv,Victoire Hapoel Jerusalem,5.4,30.9,66.74
+Hapoel Jerusalem - Maccabi Tel Aviv,Match Nul,4.2,31.6,32.54
+Maccabi Netanya - Bnei Sakhnin,Match Nul,3.75,31.6,18.34
+Maccabi Netanya - Bnei Sakhnin,Victoire Bnei Sakhnin,3.8,37.6,42.75
+Maribor - Bravo,Match Nul,3.75,31.6,18.34
+Maribor - Bravo,Victoire Bravo,3.95,37.6,48.38
+Mura - Koper,Match Nul,3.5,31.6,10.45
+Olimpija Ljubljana - Nafta,Match Nul,4.0,31.6,26.23
+Olimpija Ljubljana - Nafta,Victoire Nafta,4.6,37.6,72.8
+Vasas - Puskas Akademia,Match Nul,3.5,31.6,10.45
+Vasas - Puskas Akademia,Victoire Puskas Akademia,2.8,37.6,5.18
+Paksi - Ujpest,Match Nul,3.8,31.6,19.92
+Paksi - Ujpest,Victoire Ujpest,3.15,37.6,18.33
+MTK Budapest - Nyiregyhaza,Match Nul,3.55,31.6,12.03
+Kisvarda FC - Debreceni VSC,Match Nul,3.3,31.6,4.14
+Gyor ETO - Zalaegerszeg TE,Match Nul,4.4,31.6,38.85
+Gyor ETO - Zalaegerszeg TE,Victoire Zalaegerszeg TE,5.0,37.6,87.83
+Reims - Annecy FC,Match Nul,3.7,33.4,23.74
+Reims - Annecy FC,Victoire Annecy FC,3.6,35.0,26.04
+Jaguares - Boyacá Chicó,Victoire Boyacá Chicó,4.0,37.6,50.26
+Tolima - Bucaramanga,Victoire Bucaramanga,3.1,37.6,16.45
+Junior De Barranquilla - Once Caldas,Victoire Once Caldas,3.35,37.6,25.84
+Fortaleza FC - Atletico Nacional,Victoire Fortaleza FC,3.4,30.9,4.98
+Pasto - Llaneros FC,Victoire Llaneros FC,3.7,37.6,38.99
+Deportivo Cali - Internacional de Bogotá,Match Nul,3.3,31.6,4.14
+Deportivo Cali - Internacional de Bogotá,Victoire Internacional de Bogotá,4.7,37.6,76.56
+Independiente Medellin - Cúcuta Deportivo,Match Nul,4.2,31.6,32.54
+Independiente Medellin - Cúcuta Deportivo,Victoire Cúcuta Deportivo,6.0,37.6,125.39
+Alianza - Deportivo Pereira,Match Nul,3.65,31.6,15.19
+Alianza - Deportivo Pereira,Victoire Deportivo Pereira,5.4,37.6,102.85
+Internacional de Bogotá - Pasto,Victoire Pasto,3.45,37.6,29.6
+America De Cali - Junior De Barranquilla,Victoire Junior De Barranquilla,3.6,37.6,35.23
+Atletico Nacional - Deportivo Cali,Match Nul,3.45,31.6,8.87
+Atletico Nacional - Deportivo Cali,Victoire Deportivo Cali,4.5,37.6,69.04
+Birmingham - Bristol City,Match Nul,3.45,31.6,8.87
+Birmingham - Bristol City,Victoire Bristol City,3.8,37.6,42.75
+Derby County - Cardiff,Match Nul,3.35,31.6,5.72
+Derby County - Cardiff,Victoire Cardiff,3.35,37.6,25.84
+Millwall - Norwich,Victoire Norwich,2.85,37.6,7.06
+Preston North End - Wolverhampton,Victoire Preston North End,3.65,30.9,12.7
+Preston North End - Wolverhampton,Match Nul,3.35,31.6,5.72
+Queens Park Rangers - Bolton,Match Nul,3.35,31.6,5.72
+Queens Park Rangers - Bolton,Victoire Bolton,3.35,37.6,25.84
+Southampton - Stoke City,Match Nul,3.85,31.6,21.5
+Southampton - Stoke City,Victoire Stoke City,4.2,37.6,57.77
+West Ham - Charlton,Match Nul,4.4,31.6,38.85
+West Ham - Charlton,Victoire Charlton,6.0,37.6,125.39
+Wrexham - Watford,Match Nul,3.3,31.6,4.14
+Wrexham - Watford,Victoire Watford,3.45,37.6,29.6
+SV Ried - Grazer AK,Match Nul,3.35,31.6,5.72
+SV Ried - Grazer AK,Victoire Grazer AK,3.35,37.6,25.84
+Sturm Graz - SC Austria Lustenau,Match Nul,5.0,31.6,57.79
+Sturm Graz - SC Austria Lustenau,Victoire SC Austria Lustenau,6.5,37.6,144.17
+SCR Altach - TSV Hartberg,Match Nul,3.35,31.6,5.72
+SCR Altach - TSV Hartberg,Victoire TSV Hartberg,3.75,37.6,40.87
+Linfield - Cliftonville,Match Nul,3.65,31.6,15.19
+Linfield - Cliftonville,Victoire Cliftonville,3.4,37.6,27.72
+Ballymena - Glentoran,Victoire Ballymena,3.4,30.9,4.98
+Ballymena - Glentoran,Match Nul,3.4,31.6,7.3
+Carrick Rangers - Coleraine,Match Nul,3.8,31.6,19.92
+Crusaders - Portadown,Match Nul,3.3,31.6,4.14
+Dungannon - Bangor FC,Match Nul,3.7,31.6,16.76
+Dungannon - Bangor FC,Victoire Bangor FC,3.95,37.6,48.38
+Larne - Limavady United,Match Nul,4.9,31.6,54.63
+Larne - Limavady United,Victoire Limavady United,6.5,37.6,144.17
+CFR Cluj - FCSB ,Match Nul,3.3,31.6,4.14
+UTA Arad - CS Corvinul Hunedoara,Victoire CS Corvinul Hunedoara,2.9,37.6,8.94
+Dinamo Bucarest - FC Universitatea Cluj,Match Nul,3.35,31.6,5.72
+Dinamo Bucarest - FC Universitatea Cluj,Victoire FC Universitatea Cluj,3.7,37.6,38.99
+FC Botosani - Csíkszereda Miercurea Ciuc,Match Nul,3.65,31.6,15.19
+FC Botosani - Csíkszereda Miercurea Ciuc,Victoire Csíkszereda Miercurea Ciuc,4.4,37.6,65.29
+CS Universitatea Craiova - FC Voluntari,Match Nul,4.5,31.6,42.01
+CS Universitatea Craiova - FC Voluntari,Victoire FC Voluntari,6.25,37.6,134.78
+SC Otelul Galati - Argeș Pitești,Victoire Argeș Pitești,2.95,37.6,10.82
+Kolos Kovalivka - Obolon Kiev,Victoire Obolon Kiev,3.9,37.6,46.5
+Shakhtar Donetsk - Polissya Zhytomyr,Match Nul,3.3,31.6,4.14
+Shakhtar Donetsk - Polissya Zhytomyr,Victoire Polissya Zhytomyr,3.8,37.6,42.75
+Albacete - Real Sociedad B,Match Nul,3.35,31.6,5.72
+Albacete - Real Sociedad B,Victoire Real Sociedad B,3.75,37.6,40.87
+Castellon - Sabadell,Match Nul,3.95,31.6,24.65
+Castellon - Sabadell,Victoire Sabadell,4.7,37.6,76.56
+Eibar - Real Valladolid,Victoire Real Valladolid,3.2,37.6,20.21
+Eldense - CF Cadiz,Victoire CF Cadiz,2.95,37.6,10.82
+Real Oviedo - Leganes,Victoire Leganes,3.9,37.6,46.5
+Gijon - Burgos CF,Victoire Burgos CF,2.75,37.6,3.3
+FC Barcelone - Athletic Bilbao,Match Nul,5.0,31.6,57.79
+FC Barcelone - Athletic Bilbao,Victoire Athletic Bilbao,6.5,37.6,144.17
+Real Madrid - Real Sociedad,Match Nul,5.0,31.6,57.79
+Real Madrid - Real Sociedad,Victoire Real Sociedad,6.25,37.6,134.78
+Athletic Bilbao - FC Séville,Match Nul,3.6,31.6,13.61
+Athletic Bilbao - FC Séville,Victoire FC Séville,4.7,37.6,76.56
+Atletico Madrid - Villarreal,Match Nul,3.65,31.6,15.19
+Atletico Madrid - Villarreal,Victoire Villarreal,3.85,37.6,44.63
+Betis Séville - Real Sociedad,Match Nul,3.4,31.6,7.3
+Betis Séville - Real Sociedad,Victoire Real Sociedad,3.4,37.6,27.72
+Elche - FC Barcelone,Victoire Elche,7.25,30.9,123.86
+Elche - FC Barcelone,Match Nul,5.7,31.6,79.88
+Espanyol Barcelone - Real Madrid,Victoire Espanyol Barcelone,6.5,30.9,100.7
+Espanyol Barcelone - Real Madrid,Match Nul,4.5,31.6,42.01
+Getafe - Racing Santander,Victoire Racing Santander,3.8,37.6,42.75
+Malaga - Deportivo La Corogne,Victoire Deportivo La Corogne,2.8,37.6,5.18
+Osasuna - Levante,Match Nul,3.6,31.6,13.61
+Osasuna - Levante,Victoire Levante,4.1,37.6,54.02
+Rayo Vallecano - Alaves,Victoire Alaves,3.25,37.6,22.09
+Valence - Celta Vigo,Victoire Celta Vigo,3.05,37.6,14.57
+Bayern Munich - VfB Stuttgart,Match Nul,6.5,31.6,105.13
+Bayern Munich - VfB Stuttgart,Victoire VfB Stuttgart,7.0,37.6,162.96
+Borussia Dortmund - Hambourg,Match Nul,5.3,31.6,67.26
+Borussia Dortmund - Hambourg,Victoire Hambourg,7.25,37.6,172.35
+RB Leipzig - Borussia Mönchengladbach,Match Nul,4.4,31.6,38.85
+RB Leipzig - Borussia Mönchengladbach,Victoire Borussia Mönchengladbach,4.8,37.6,80.31
+Fribourg - Werder Brême,Match Nul,3.45,31.6,8.87
+Fribourg - Werder Brême,Victoire Werder Brême,3.3,37.6,23.97
+Augsbourg - Schalke 04,Match Nul,3.6,31.6,13.61
+Augsbourg - Schalke 04,Victoire Schalke 04,3.0,37.6,12.7
+Mayence - Paderborn,Match Nul,3.95,31.6,24.65
+Mayence - Paderborn,Victoire Paderborn,4.3,37.6,61.53
+Union Berlin - Eintracht Francfort,Match Nul,3.5,31.6,10.45
+FC Cologne - TSG Hoffenheim,Match Nul,3.55,31.6,12.03
+SV Elversberg - Bayer Leverkusen,Victoire SV Elversberg,4.7,30.9,45.12
+SV Elversberg - Bayer Leverkusen,Match Nul,4.5,31.6,42.01
+St. Pauli - Kaiserslautern,Victoire Kaiserslautern,3.4,37.6,27.72
+Heidenheim - Dynamo Dresden,Victoire Dynamo Dresden,3.05,37.6,14.57
+Darmstadt - Hanovre 96,Match Nul,3.5,31.6,10.45
+Nuremberg - Arminia Bielefeld,Match Nul,3.5,31.6,10.45
+Nuremberg - Arminia Bielefeld,Victoire Arminia Bielefeld,3.35,37.6,25.84
+Bochum - VfL Osnabrück,Match Nul,4.1,31.6,29.39
+Bochum - VfL Osnabrück,Victoire VfL Osnabrück,4.8,37.6,80.31
+Karlsruhe - Wolfsbourg,Victoire Karlsruhe,3.85,30.9,18.88
+Karlsruhe - Wolfsbourg,Match Nul,3.5,31.6,10.45
+Magdebourg - Holstein Kiel,Match Nul,3.35,31.6,5.72
+Magdebourg - Holstein Kiel,Victoire Holstein Kiel,2.85,37.6,7.06
+Eintracht Brunswick - Hertha Berlin,Match Nul,3.35,31.6,5.72
+Energie Cottbus - Furth,Match Nul,3.5,31.6,10.45
+Ammanford - Connah's Quay,Victoire Ammanford,9.5,30.9,193.33
+Ammanford - Connah's Quay,Match Nul,5.7,31.6,79.88
+Cardiff Metropolitan University - The New Saints,Victoire Cardiff Metropolitan University,5.6,30.9,72.91
+Cardiff Metropolitan University - The New Saints,Match Nul,4.3,31.6,35.7
+Colwyn Bay FC - Airbus UK Broughton,Match Nul,4.1,31.6,29.39
+Colwyn Bay FC - Airbus UK Broughton,Victoire Airbus UK Broughton,4.7,37.6,76.56
+Flint Town United FC - Briton Ferry Llansawel,Match Nul,3.6,31.6,13.61
+Flint Town United FC - Briton Ferry Llansawel,Victoire Briton Ferry Llansawel,3.65,37.6,37.11
+Haverfordwest  - Cambrian & Clydach Vale,Match Nul,3.7,31.6,16.76
+Haverfordwest  - Cambrian & Clydach Vale,Victoire Cambrian & Clydach Vale,3.65,37.6,37.11
+Holywell Town - Barry Town,Victoire Holywell Town,5.2,30.9,60.56
+Holywell Town - Barry Town,Match Nul,4.5,31.6,42.01
+Penybont - Llandudno FC,Match Nul,3.55,31.6,12.03
+Penybont - Llandudno FC,Victoire Llandudno FC,4.0,37.6,50.26
+Trefelin FC - Caernarfon Town,Victoire Trefelin FC,7.25,30.9,123.86
+Trefelin FC - Caernarfon Town,Match Nul,5.4,31.6,70.41
+Estoril - Rio Ave,Match Nul,3.35,31.6,5.72
+Estoril - Rio Ave,Victoire Rio Ave,3.4,37.6,27.72
+Gil Vicente - Casa Pia AC,Match Nul,3.35,31.6,5.72
+Gil Vicente - Casa Pia AC,Victoire Casa Pia AC,4.6,37.6,72.8
+Maritimo - Academico Viseu,Victoire Academico Viseu,3.45,37.6,29.6
+FC Porto - FC Arouca,Match Nul,5.8,31.6,83.04
+FC Porto - FC Arouca,Victoire FC Arouca,9.5,37.6,256.87
+Santa Clara - Famalicao,Victoire Famalicao,2.75,37.6,3.3
+Sporting Portugal - Alverca FC,Match Nul,6.0,31.6,89.35
+Sporting Portugal - Alverca FC,Victoire Alverca FC,8.5,37.6,219.3
+Vitoria Guimaraes - Nacional Madeira ,Match Nul,3.6,31.6,13.61
+Vitoria Guimaraes - Nacional Madeira ,Victoire Nacional Madeira ,4.3,37.6,61.53
+Benfica B - Portimonense,Match Nul,3.4,31.6,7.3
+Benfica B - Portimonense,Victoire Portimonense,3.8,37.6,42.75
+Chaves - AVS Futebol SAD,Match Nul,3.3,31.6,4.14
+Chaves - AVS Futebol SAD,Victoire AVS Futebol SAD,3.6,37.6,35.23
+Farense - FC Felgueiras,Victoire FC Felgueiras,3.3,37.6,23.97
+Feirense - Porto B,Victoire Porto B,3.25,37.6,22.09
+Leixoes SC - Uniao Leiria,Victoire Uniao Leiria,2.75,37.6,3.3
+Tondela - Academica Coimbra,Match Nul,3.3,31.6,4.14
+Tondela - Academica Coimbra,Victoire Academica Coimbra,3.65,37.6,37.11
+FC Vizela - Amarante FC,Match Nul,3.3,31.6,4.14
+FC Vizela - Amarante FC,Victoire Amarante FC,3.4,37.6,27.72
+Artis Brno - Sparta Prague,Victoire Artis Brno,6.25,30.9,92.98
+Artis Brno - Sparta Prague,Match Nul,4.6,31.6,45.17
+Mlada Boleslav - Slovacko,Match Nul,3.45,31.6,8.87
+Mlada Boleslav - Slovacko,Victoire Slovacko,3.55,37.6,33.36
+Sigma Olomouc - FK Pardubice,Match Nul,3.4,31.6,7.3
+Sigma Olomouc - FK Pardubice,Victoire FK Pardubice,3.35,37.6,25.84
+Slavia Prague - Bohemians 1905,Match Nul,5.8,31.6,83.04
+Slavia Prague - Bohemians 1905,Victoire Bohemians 1905,8.5,37.6,219.3
+Teplice - Brno,Victoire Brno,2.85,37.6,7.06
+Zlín - Slovan Liberec,Victoire Zlín,3.45,30.9,6.53
+FK Sarajevo - FK Bsk Banja Luka,Match Nul,3.85,31.6,21.5
+FK Sarajevo - FK Bsk Banja Luka,Victoire FK Bsk Banja Luka,6.0,37.6,125.39
+Trabzonspor - Istanbul Basaksehir,Match Nul,3.3,31.6,4.14
+Trabzonspor - Istanbul Basaksehir,Victoire Istanbul Basaksehir,2.85,37.6,7.06
+Alanyaspor - Besiktas,Match Nul,3.3,31.6,4.14
+Rizespor - Samsunspor,Victoire Samsunspor,2.8,37.6,5.18
+Göztepe AS - Genclerbirligi,Match Nul,3.5,31.6,10.45
+Göztepe AS - Genclerbirligi,Victoire Genclerbirligi,4.2,37.6,57.77
+Fenerbahce - Konyaspor,Match Nul,4.9,31.6,54.63
+Fenerbahce - Konyaspor,Victoire Konyaspor,6.75,37.6,153.57
+Kocaelispor - Amedspor,Victoire Amedspor,2.85,37.6,7.06
+Erzurumspor BB - Galatasaray,Victoire Erzurumspor BB,6.0,30.9,85.26
+Erzurumspor BB - Galatasaray,Match Nul,4.3,31.6,35.7
+AEK Athènes - POT Iraklis,Match Nul,6.25,31.6,97.24
+AEK Athènes - POT Iraklis,Victoire POT Iraklis,10.5,37.6,294.44
+OFI Crète - NFC Volos,Victoire NFC Volos,3.15,37.6,18.33
+Olympiakos - Atromitos Athènes,Match Nul,5.4,31.6,70.41
+Olympiakos - Atromitos Athènes,Victoire Atromitos Athènes,9.0,37.6,238.09
+PAOK Salonique - Levadiakos,Match Nul,4.4,31.6,38.85
+PAOK Salonique - Levadiakos,Victoire Levadiakos,6.75,37.6,153.57
+FK Auda - FK Liepaja,Match Nul,3.55,31.6,12.03
+FK Auda - FK Liepaja,Victoire FK Liepaja,3.2,37.6,20.21
+Sportivo Ameliano - Deportivo Recoleta,Victoire Deportivo Recoleta,3.2,37.6,20.21
+Club Olimpia - Cerro Porteno,Victoire Cerro Porteno,3.1,37.6,16.45
+Nacional Asuncion - Sportivo Luqueno,Match Nul,3.45,31.6,8.87
+Nacional Asuncion - Sportivo Luqueno,Victoire Sportivo Luqueno,4.1,37.6,54.02
+Libertad Asuncion - CS San Lorenzo,Match Nul,4.2,31.6,32.54
+Libertad Asuncion - CS San Lorenzo,Victoire CS San Lorenzo,6.5,37.6,144.17
+Al-Ittihad Kalba - Al Wasl,Victoire Al-Ittihad Kalba,4.3,30.9,32.77
+Al-Ittihad Kalba - Al Wasl,Match Nul,4.1,31.6,29.39
+Al Nasr - Al-Wahda,Match Nul,3.4,31.6,7.3
+Al Ain - Khor Fakkan Club,Match Nul,6.0,31.6,89.35
+Al Ain - Khor Fakkan Club,Victoire Khor Fakkan Club,9.0,37.6,238.09
+Sharjah - Al Jazira Club,Match Nul,3.4,31.6,7.3
+Avellino - Arezzo,Victoire Arezzo,3.0,37.6,12.7
+Benevento - Modène,Victoire Modène,2.75,37.6,3.3
+Carrarese - Mantova,Victoire Mantova,2.85,37.6,7.06
+Palerme - Juve Stabia,Match Nul,3.4,31.6,7.3
+Palerme - Juve Stabia,Victoire Juve Stabia,4.5,37.6,69.04
+Pisa - Padoue,Match Nul,3.3,31.6,4.14
+Pisa - Padoue,Victoire Padoue,4.4,37.6,65.29
+FC Sudtirol - Entella,Victoire Entella,3.55,37.6,33.36
+Hellas Vérone - Ascoli,Match Nul,3.5,31.6,10.45
+Hellas Vérone - Ascoli,Victoire Ascoli,4.5,37.6,69.04
+Al Feiha - Al-Hilal,Victoire Al Feiha,9.0,30.9,177.89
+Al Feiha - Al-Hilal,Match Nul,6.0,31.6,89.35
+Al Riyadh - Al-Nassr,Victoire Al Riyadh,7.0,30.9,116.14
+Al Riyadh - Al-Nassr,Match Nul,5.6,31.6,76.72
+Al Hazem - Diriyah Club,Match Nul,3.45,31.6,8.87
+Al-Faisaly - Neom,Victoire Al-Faisaly,3.95,30.9,21.96
+Al-Faisaly - Neom,Match Nul,4.2,31.6,32.54
+Al-Qadsiah - Al-Ittihad FC,Match Nul,4.0,31.6,26.23
+Al-Qadsiah - Al-Ittihad FC,Victoire Al-Ittihad FC,3.8,37.6,42.75
+Al Fateh - Al-Ettifaq,Match Nul,3.3,31.6,4.14
+Al Khaleej - Al Shabab,Match Nul,3.45,31.6,8.87
+Al Ahli SC - Abha,Match Nul,5.9,31.6,86.19
+Al Ahli SC - Abha,Victoire Abha,8.5,37.6,219.3
+Ypsonas FC - Omonia 29th May,Match Nul,3.3,31.6,4.14
+Ypsonas FC - Omonia 29th May,Victoire Omonia 29th May,3.55,37.6,33.36
+Karmiotissa - Pafos FC,Victoire Karmiotissa,9.0,30.9,177.89
+Karmiotissa - Pafos FC,Match Nul,5.3,31.6,67.26
+Olympiakos Nicosia - NEA Salamina Famagouste,Victoire NEA Salamina Famagouste,3.05,37.6,14.57
+AEK Larnaca - APOEL Nicosie,Victoire APOEL Nicosie,3.1,37.6,16.45
+AEL Limassol - Anorthosis Famagouste,Match Nul,3.3,31.6,4.14
+AEL Limassol - Anorthosis Famagouste,Victoire Anorthosis Famagouste,3.25,37.6,22.09
+River Plate - Velez Sarsfield,Match Nul,3.35,31.6,5.72
+River Plate - Velez Sarsfield,Victoire Velez Sarsfield,5.0,37.6,87.83
+Club Atletico Barracas Central - Club Atletico Platense,Victoire Club Atletico Platense,2.75,37.6,3.3
+Belgrano - Defensa Y Justicia,Victoire Defensa Y Justicia,4.2,37.6,57.77
+Independiente - Independiente Rivadavia,Victoire Independiente Rivadavia,3.85,37.6,44.63
+Gimnasia La Plata - Gimnasia de Mendoza,Victoire Gimnasia de Mendoza,3.95,37.6,48.38
+Tigre - Central Cordoba,Match Nul,3.45,31.6,8.87
+Tigre - Central Cordoba,Victoire Central Cordoba,5.7,37.6,114.12
+Huracan - Deportivo Riestra,Victoire Deportivo Riestra,4.0,37.6,50.26
+Newell's Old Boys - Banfield,Victoire Banfield,3.05,37.6,14.57
+Union De Santa Fe - Sarmiento,Victoire Sarmiento,4.2,37.6,57.77
+Instituto AC Cordoba - San Lorenzo,Victoire San Lorenzo,3.75,37.6,40.87
+CA Talleres - Central Cordoba,Match Nul,3.3,31.6,4.14
+CA Talleres - Central Cordoba,Victoire Central Cordoba,5.5,37.6,106.61
+Independiente - Gimnasia de Mendoza,Match Nul,3.4,31.6,7.3
+Independiente - Gimnasia de Mendoza,Victoire Gimnasia de Mendoza,5.3,37.6,99.1
+Boca Juniors - Lanus,Victoire Lanus,4.9,37.6,84.07
+Estudiantes - Newell's Old Boys,Victoire Newell's Old Boys,4.9,37.6,84.07
+Huracan - Estudiantes Río Cuarto,Victoire Estudiantes Río Cuarto,5.8,37.6,117.88
+Independiente Rivadavia - Racing Club,Victoire Racing Club,3.1,37.6,16.45
+Banfield - River Plate,Victoire Banfield,4.8,30.9,48.21
+Argentinos Juniors - Aldosivi,Match Nul,3.85,31.6,21.5
+Argentinos Juniors - Aldosivi,Victoire Aldosivi,7.5,37.6,181.74
+Tigre - Club Atletico Barracas Central,Victoire Club Atletico Barracas Central,4.6,37.6,72.8
+Rosario Central - Gimnasia La Plata,Victoire Gimnasia La Plata,3.95,37.6,48.38
+AEK Athènes - Levski Sofia,Match Nul,3.5,31.6,10.45
+AEK Athènes - Levski Sofia,Victoire Levski Sofia,4.9,37.6,84.07
+LASK - Celtic Glasgow,Match Nul,3.35,31.6,5.72
+Sabah - Hapoel Beer Sheva,Match Nul,3.65,31.6,15.19
+Sabah - Hapoel Beer Sheva,Victoire Hapoel Beer Sheva,3.4,37.6,27.72
+Lyon - Fenerbahce,Victoire Fenerbahce,3.55,36.4,29.2
+Bodø/Glimt - NEC Nijmegen,Match Nul,4.1,31.6,29.39
+Bodø/Glimt - NEC Nijmegen,Victoire NEC Nijmegen,4.1,37.6,54.02
+Trabzonspor - Ferencvaros,Match Nul,4.0,31.6,26.23
+Trabzonspor - Ferencvaros,Victoire Ferencvaros,4.3,37.6,61.53
+CS Universitatea Craiova - FC Ararat-Armenia,Match Nul,4.8,31.6,51.48
+CS Universitatea Craiova - FC Ararat-Armenia,Victoire FC Ararat-Armenia,7.25,37.6,172.35
+Saint-Trond - Omónia Nicosie,Match Nul,3.6,31.6,13.61
+Saint-Trond - Omónia Nicosie,Victoire Omónia Nicosie,3.9,37.6,46.5
+Étoile Rouge Belgrade - Viktoria Plzen,Match Nul,3.8,31.6,19.92
+Étoile Rouge Belgrade - Viktoria Plzen,Victoire Viktoria Plzen,3.7,37.6,38.99
+Egnatia Rrogozhine - Lillestrøm,Match Nul,3.5,31.6,10.45
+Jagiellonia Białystok - Iberia 1999,Match Nul,4.8,31.6,51.48
+Jagiellonia Białystok - Iberia 1999,Victoire Iberia 1999,7.5,37.6,181.74
+Mjallby - Red Bull Salzbourg,Victoire Mjallby,4.1,30.9,26.6
+Mjallby - Red Bull Salzbourg,Match Nul,3.95,31.6,24.65
+Kairat - Anderlecht,Match Nul,3.45,31.6,8.87
+Lech Poznan - Thoune,Match Nul,4.4,31.6,38.85
+Lech Poznan - Thoune,Victoire Thoune,5.2,37.6,95.34
+Besiktas - Kauno Žalgiris,Match Nul,8.5,31.6,168.24
+Besiktas - Kauno Žalgiris,Victoire Kauno Žalgiris,15.0,37.6,463.48
+Benfica - Aarhus GF,Match Nul,8.0,31.6,152.46
+Benfica - Aarhus GF,Victoire Aarhus GF,11.5,37.6,332.0
+Vikingur Reykjavik - Borac Banja Luka,Match Nul,4.2,31.6,32.54
+Vikingur Reykjavik - Borac Banja Luka,Victoire Borac Banja Luka,4.8,37.6,80.31
+Shamrock Rovers - KuPS,Match Nul,3.5,31.6,10.45
+Shamrock Rovers - KuPS,Victoire KuPS,3.25,37.6,22.09
+KF Drita - Inter Club De Escaldes,Match Nul,3.9,31.6,23.08
+KF Drita - Inter Club De Escaldes,Victoire Inter Club De Escaldes,4.4,37.6,65.29
+Klaksvik - Riga FC,Match Nul,3.65,31.6,15.19
+Lincoln Red Imps - Larne,Match Nul,3.5,31.6,10.45
+Lincoln Red Imps - Larne,Victoire Larne,3.5,37.6,31.48
+Motherwell - Fribourg,Victoire Motherwell,5.8,30.9,79.09
+Motherwell - Fribourg,Match Nul,4.8,31.6,51.48
+Górnik Zabrze - Monaco,Victoire Górnik Zabrze,4.5,31.5,41.61
+Górnik Zabrze - Monaco,Match Nul,4.5,30.0,35.03
+Inter Turku - Copenhague,Victoire Inter Turku,5.6,30.9,72.91
+Inter Turku - Copenhague,Match Nul,4.6,31.6,45.17
+Heart of Midlothian - Rapid Vienne,Match Nul,3.5,31.6,10.45
+Tromso - Brighton,Victoire Tromso,5.0,30.9,54.38
+Tromso - Brighton,Match Nul,4.1,31.6,29.39
+Hajduk Split - Rakow Czestochowa,Match Nul,3.4,31.6,7.3
+Hajduk Split - Rakow Czestochowa,Victoire Rakow Czestochowa,3.5,37.6,31.48
+Panathinaïkos FC - Hradec Kralove,Match Nul,4.1,31.6,29.39
+Panathinaïkos FC - Hradec Kralove,Victoire Hradec Kralove,6.0,37.6,125.39
+La Gantoise - Hibernian FC,Match Nul,3.95,31.6,24.65
+La Gantoise - Hibernian FC,Victoire Hibernian FC,5.2,37.6,95.34
+PAOK Salonique - Brann,Match Nul,3.65,31.6,15.19
+PAOK Salonique - Brann,Victoire Brann,4.8,37.6,80.31
+Atalanta Bergame - Hapoel Tel Aviv,Match Nul,7.75,31.6,144.57
+Atalanta Bergame - Hapoel Tel Aviv,Victoire Hapoel Tel Aviv,12.5,37.6,369.57
+Midtjylland - Rijeka,Match Nul,4.2,31.6,32.54
+Midtjylland - Rijeka,Victoire Rijeka,5.5,37.6,106.61
+Glasgow Rangers - Jablonec,Match Nul,4.8,31.6,51.48
+Glasgow Rangers - Jablonec,Victoire Jablonec,6.75,37.6,153.57
+Nordsjælland - Saint-Gall,Match Nul,4.7,31.6,48.32
+Nordsjælland - Saint-Gall,Victoire Saint-Gall,4.6,37.6,72.8
+KS Dinamo Tirana - Pafos FC,Victoire KS Dinamo Tirana,3.7,30.9,14.24
+KS Dinamo Tirana - Pafos FC,Match Nul,3.45,31.6,8.87
+Sion - Ajax Amsterdam,Victoire Sion,3.75,30.9,15.79
+Sion - Ajax Amsterdam,Match Nul,4.0,31.6,26.23
+Braga - Austria Vienne,Match Nul,5.1,31.6,60.94
+Braga - Austria Vienne,Victoire Austria Vienne,7.75,37.6,191.13
+Twente - Qarabag Agdam,Match Nul,4.4,31.6,38.85
+Twente - Qarabag Agdam,Victoire Qarabag Agdam,5.2,37.6,95.34
+Getafe - Partizan Belgrade,Match Nul,4.7,31.6,48.32
+Getafe - Partizan Belgrade,Victoire Partizan Belgrade,8.0,37.6,200.52
+FC Lugano - Maccabi Tel Aviv,Match Nul,3.6,31.6,13.61
+FC Lugano - Maccabi Tel Aviv,Victoire Maccabi Tel Aviv,3.3,37.6,23.97
+Birmingham - Brentford,Victoire Birmingham,3.45,30.9,6.53
+Birmingham - Brentford,Match Nul,3.35,31.6,5.72
+Tottenham - Charlton,Match Nul,5.4,31.6,70.41
+Tottenham - Charlton,Victoire Charlton,8.0,37.6,200.52
+Stevenage - Reading,Victoire Reading,2.85,37.6,7.06
+Southampton - West Ham,Match Nul,3.3,31.6,4.14
+Newcastle - West Bromwich,Match Nul,4.3,31.6,35.7
+Newcastle - West Bromwich,Victoire West Bromwich,6.0,37.6,125.39
+Ipswich - Leicester,Match Nul,3.6,31.6,13.61
+Ipswich - Leicester,Victoire Leicester,3.65,37.6,37.11
+Fulham - Wimbledon,Match Nul,5.8,31.6,83.04
+Fulham - Wimbledon,Victoire Wimbledon,8.5,37.6,219.3
+Doncaster Rovers - Middlesbrough,Victoire Doncaster Rovers,4.1,30.9,26.6
+Doncaster Rovers - Middlesbrough,Match Nul,3.9,31.6,23.08
+Chelsea - Luton Town,Match Nul,5.7,31.6,79.88
+Chelsea - Luton Town,Victoire Luton Town,9.0,37.6,238.09
+Barnsley - Crewe Alexandra,Match Nul,3.85,31.6,21.5
+Barnsley - Crewe Alexandra,Victoire Crewe Alexandra,4.0,37.6,50.26
+Fleetwood Town - Shrewsbury Town,Victoire Shrewsbury Town,3.05,37.6,14.57
+Plymouth Argyle - Coventry City,Victoire Plymouth Argyle,4.0,30.9,23.51
+Plymouth Argyle - Coventry City,Match Nul,3.65,31.6,15.19
+Sheffield Wednesday - Wolverhampton,Victoire Sheffield Wednesday,4.4,30.9,35.86
+Sheffield Wednesday - Wolverhampton,Match Nul,3.65,31.6,15.19
+Watford - Peterborough United,Match Nul,4.2,31.6,32.54
+Watford - Peterborough United,Victoire Peterborough United,4.7,37.6,76.56
+Nottingham Forest - Leeds,Victoire Leeds,2.85,37.6,7.06
+Preston North End - Everton,Victoire Preston North End,4.8,30.9,48.21
+Preston North End - Everton,Match Nul,3.95,31.6,24.65
+Independiente Del Valle - Tolima,Match Nul,3.6,31.6,13.61
+Independiente Del Valle - Tolima,Victoire Tolima,4.8,37.6,80.31
+Slavia Sofia - Levski Sofia,Victoire Slavia Sofia,7.75,30.9,139.3
+Slavia Sofia - Levski Sofia,Match Nul,4.2,31.6,32.54
+Celta Vigo - Osasuna,Victoire Osasuna,3.35,37.6,25.84
+Boca Juniors - Sao Paulo FC,Victoire Sao Paulo FC,3.6,37.6,35.23
+Fluminense - Club Atletico Platense,Match Nul,3.5,31.6,10.45
+Fluminense - Club Atletico Platense,Victoire Club Atletico Platense,7.5,37.6,181.74

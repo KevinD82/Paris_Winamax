@@ -1,0 +1,21 @@
+# Environnement virtuel Python
+venv/
+env/
+ENV/
+.venv/
+
+# Cache Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Fichiers temporaires Streamlit
+.streamlit/
+
+# Fichiers de configuration / OS
+.DS_Store
+Thumbs.db
+*.swp
+
+# Fichiers / Logs de test
+*.log
