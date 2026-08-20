@@ -7,15 +7,27 @@ import requests
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-        " (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        " (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/json, text/plain, */*",
+    "Accept": (
+        "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+    ),
+    "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
 }
 
 
 def get_football_matches():
     url = "https://www.winamax.fr/paris-sportifs/sports/1"
-    response = requests.get(url, headers=HEADERS)
+
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    try:
+        response = session.get(url, timeout=10)
+    except Exception:
+        return None
 
     if response.status_code != 200 or "PRELOADED_STATE" not in response.text:
         return None
@@ -108,7 +120,14 @@ def get_football_matches():
 
 def get_match_extra_bets(match_id):
     url = f"https://www.winamax.fr/paris-sportifs/match/{match_id}"
-    res = requests.get(url, headers=HEADERS)
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    try:
+        res = session.get(url, timeout=10)
+    except Exception:
+        return {}
+
     if res.status_code != 200 or "PRELOADED_STATE" not in res.text:
         return {}
 

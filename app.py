@@ -291,7 +291,7 @@ else:
 
         st.divider()
 
-        # --- TABLEAU NOMBRE DE BUTS AVEC COLORATION CORRIGÉE ---
+        # --- TABLEAU NOMBRE DE BUTS AVEC COLORATION ---
         st.subheader("📊 Nombre total de buts (+ / -)")
         ou_list = extra_bets.get("over_under", [])
 
@@ -381,7 +381,7 @@ else:
 
         st.divider()
 
-        # --- TABLEAU BUTEURS AVEC COLORATION CORRIGÉE ---
+        # --- TABLEAU BUTEURS AVEC COLORATION ---
         st.subheader("👟 Buteurs & Joueurs décisifs")
         scorers_dict = extra_bets.get("scorers", {})
 
