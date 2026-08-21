@@ -35,16 +35,46 @@ else:
         if "league" not in df_matches.columns:
             df_matches["league"] = "Autre / International"
 
+    # --- NOUVEL ORDRE DE LA SIDEBAR ---
     st.sidebar.header("🔍 Filtres & Sélection")
 
+    # 1. Date
     available_dates = list(dict.fromkeys(df_matches["date"].tolist()))
     selected_date = st.sidebar.selectbox(
         "📅 1. Choisissez une date :", available_dates, index=0
     )
-
     df_filtered_date = df_matches[df_matches["date"] == selected_date]
 
-    # --- NOUVEAU : Paramètres Bankroll & Kelly ---
+    # 2. Championnat
+    available_leagues = ["Tous les championnats"] + sorted(
+        list(set(df_filtered_date["league"].tolist()))
+    )
+    selected_league = st.sidebar.selectbox(
+        "🏆 2. Choisissez un championnat :", available_leagues, index=0
+    )
+
+    if selected_league != "Tous les championnats":
+        df_filtered_league = df_filtered_date[
+            df_filtered_date["league"] == selected_league
+        ].copy()
+    else:
+        df_filtered_league = df_filtered_date.copy()
+
+    # 3. Match
+    df_filtered_league["display_name"] = (
+        df_filtered_league["heure"] + "  |  " + df_filtered_league["match"]
+    )
+
+    selected_display = st.sidebar.selectbox(
+        f"⚽ 3. Matchs ({len(df_filtered_league)} disponibles) :",
+        df_filtered_league["display_name"].tolist(),
+    )
+
+    match_data = df_filtered_league[
+        df_filtered_league["display_name"] == selected_display
+    ].iloc[0]
+
+    # 4. Bankroll Management (Déplacé tout en bas de la sidebar)
     st.sidebar.divider()
     st.sidebar.header("💰 Bankroll Management")
     bankroll = st.sidebar.number_input(
@@ -68,9 +98,8 @@ else:
         "Le critère de Kelly calcule la mise optimale pour faire croître ton capital sans risquer la faillite."
     )
     st.sidebar.divider()
-    # ---------------------------------------------
 
-    # --- NOUVEAU : SECTION GLOBALE DE LA JOURNÉE (TOP VALUE BETS) ---
+    # --- SECTION GLOBALE DE LA JOURNÉE (TOP VALUE BETS) ---
     with st.expander(
         f"🔥 Voir tous les Value Bets & Paris de la journée ({selected_date})",
         expanded=False,
@@ -122,21 +151,21 @@ else:
                     best_ev = max(e_1, e_N, e_2)
                     if best_ev > 0.05:
                         if best_ev == e_1:
-                            b_type, b_cote, b_prob, b_team_name = (
+                            b_type, b_cote, b_prob, _ = (
                                 f"Victoire {h_team}",
                                 r_match["cote_1"],
                                 p_1,
                                 h_team,
                             )
                         elif best_ev == e_N:
-                            b_type, b_cote, b_prob, b_team_name = (
+                            b_type, b_cote, b_prob, _ = (
                                 "Match Nul",
                                 r_match["cote_N"],
                                 p_N,
                                 "Nul",
                             )
                         else:
-                            b_type, b_cote, b_prob, b_team_name = (
+                            b_type, b_cote, b_prob, _ = (
                                 f"Victoire {a_team}",
                                 r_match["cote_2"],
                                 p_2,
@@ -172,34 +201,6 @@ else:
             )
 
     st.divider()
-    # -------------------------------------------------------------
-
-    available_leagues = ["Tous les championnats"] + sorted(
-        list(set(df_filtered_date["league"].tolist()))
-    )
-    selected_league = st.sidebar.selectbox(
-        "🏆 2. Choisissez un championnat :", available_leagues, index=0
-    )
-
-    if selected_league != "Tous les championnats":
-        df_filtered_league = df_filtered_date[
-            df_filtered_date["league"] == selected_league
-        ].copy()
-    else:
-        df_filtered_league = df_filtered_date.copy()
-
-    df_filtered_league["display_name"] = (
-        df_filtered_league["heure"] + "  |  " + df_filtered_league["match"]
-    )
-
-    selected_display = st.sidebar.selectbox(
-        f"⚽ 3. Matchs ({len(df_filtered_league)} disponibles) :",
-        df_filtered_league["display_name"].tolist(),
-    )
-
-    match_data = df_filtered_league[
-        df_filtered_league["display_name"] == selected_display
-    ].iloc[0]
 
     st.caption(f"🏆 **Compétition :** {match_data['league']}")
     st.header(f"⚽ {match_data['match']}")
@@ -285,12 +286,9 @@ else:
 
         st.divider()
 
-        # --- SECTION RÉCAPITULATIF DES MEILLEURS PARIS ---
         st.subheader("🌟 Récapitulatif des meilleurs paris recommandés")
-
         best_recommendations = []
 
-        # 1. Analyse 1N2
         if prob_1:
             best_1n2_ev = max(ev_1, ev_N, ev_2)
             best_1n2_prob = (
@@ -314,10 +312,8 @@ else:
                     )
                 )
 
-                # --- CALCUL KELLY ---
                 kelly_f = ((best_1n2_prob * best_cote) - 1) / (best_cote - 1)
                 kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
-                # --------------------
 
                 best_recommendations.append({
                     "Type": "Résultat 1N2",
@@ -330,7 +326,6 @@ else:
                     "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                 })
 
-        # 2. Analyse BTTS
         btts_odds = extra_bets.get("btts")
         if btts_odds and prob_btts_oui:
             cote_b_oui = btts_odds.get("Oui")
@@ -361,28 +356,6 @@ else:
                         "EV (Value)": f"+{ev_b_non * 100:.1f}%",
                         "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                     })
-
-        # 3. Analyse Buteurs principaux
-        scorers_dict = extra_bets.get("scorers", {})
-        if scorers_dict:
-            best_scorer = None
-            max_p_prob = 0
-            for pl, b_data in scorers_dict.items():
-                c_b = b_data.get("buteur")
-                if c_b and isinstance(c_b, float):
-                    p_impl = 1.0 / c_b
-                    if p_impl > max_p_prob:
-                        max_p_prob = p_impl
-                        best_scorer = (pl, c_b, p_impl)
-
-            if best_scorer and best_scorer[2] >= 0.35:
-                best_recommendations.append({
-                    "Type": "Buteur le plus probable",
-                    "Pari": best_scorer[0],
-                    "Cote": best_scorer[1],
-                    "Probabilité Implicite": f"{best_scorer[2] * 100:.1f}%",
-                    "EV (Value)": "N/A (Proba Bookmaker)",
-                })
 
         if best_recommendations:
             df_recap = pd.DataFrame(best_recommendations)
@@ -430,7 +403,6 @@ else:
 
         st.divider()
 
-        # --- TABLEAU NOMBRE DE BUTS AVEC COLORATION ---
         st.subheader("📊 Nombre total de buts (+ / -)")
         ou_list = extra_bets.get("over_under", [])
 
@@ -516,74 +488,75 @@ else:
 
         st.divider()
 
-        # --- TABLEAU BUTEURS AVEC COLORATION ---
-        st.subheader("👟 Buteurs & Joueurs décisifs")
+        # --- TABLEAU UNIFIÉ : JOUEUR DÉCISIF ---
+        st.subheader("🎯 Joueur décisif")
         scorers_dict = extra_bets.get("scorers", {})
 
         if scorers_dict:
-            rows_scorers = []
+            search_player = st.text_input(
+                "🔍 Rechercher un joueur :",
+                "",
+                placeholder="Ex: Amine Gouiri, Igor Paixao...",
+                key="search_scorers",
+            )
+
+            unified_rows = []
+
             for player, bets_p in scorers_dict.items():
+                if " ou " in player.lower() or " & " in player.lower():
+                    continue
+
+                if search_player and search_player.lower() not in player.lower():
+                    continue
+
                 c_b = bets_p.get("buteur")
                 c_p = bets_p.get("passeur")
                 c_d = bets_p.get("decisif")
 
-                txt_b = (
-                    f"{c_b:.2f} ({100 / c_b:.1f}%)"
-                    if (c_b and isinstance(c_b, float))
-                    else "-"
-                )
-                txt_p = (
-                    f"{c_p:.2f} ({100 / c_p:.1f}%)"
-                    if (c_p and isinstance(c_p, float))
-                    else "-"
-                )
-                txt_d = (
-                    f"{c_d:.2f} ({100 / c_d:.1f}%)"
-                    if (c_d and isinstance(c_d, float))
-                    else "-"
-                )
+                p_b = (100.0 / c_b) if (c_b and isinstance(c_b, (int, float)) and c_b > 0) else 0.0
+                p_p = (100.0 / c_p) if (c_p and isinstance(c_p, (int, float)) and c_p > 0) else 0.0
+                p_d = (100.0 / c_d) if (c_d and isinstance(c_d, (int, float)) and c_d > 0) else 0.0
 
-                rows_scorers.append({
+                b_str = f"{p_b:.0f}% ({float(c_b):.2f})" if p_b > 0 else "-"
+                p_str = f"{p_p:.0f}% ({float(c_p):.2f})" if p_p > 0 else "-"
+                d_str = f"{p_d:.0f}% ({float(c_d):.2f})" if p_d > 0 else "-"
+
+                max_score = max(p_b, p_p, p_d)
+
+                unified_rows.append({
                     "Joueur": player,
-                    "Buteur": txt_b,
-                    "Passeur": txt_p,
-                    "Décisif": txt_d,
-                    "_p_b": (100 / c_b) if isinstance(c_b, float) else 0,
-                    "_p_p": (100 / c_p) if isinstance(c_p, float) else 0,
-                    "_p_d": (100 / c_d) if isinstance(c_d, float) else 0,
+                    "Buteur": b_str,
+                    "Passeur": p_str,
+                    "Décisif": d_str,
+                    "_max_prob": max_score,
                 })
 
-            df_scorers = pd.DataFrame(rows_scorers)
+            if unified_rows:
+                df_unified = pd.DataFrame(unified_rows)
+                df_unified = df_unified.sort_values(by="_max_prob", ascending=False)
 
-            def highlight_max_scorer(row):
-                styles = pd.Series("", index=row.index)
-                probs = {
-                    "Buteur": row["_p_b"],
-                    "Passeur": row["_p_p"],
-                    "Décisif": row["_p_d"],
-                }
-                max_col = max(probs, key=probs.get)
-                max_val = probs[max_col]
+                def highlight_top_percentages(row):
+                    styles = pd.Series("", index=row.index)
+                    for col in ["Buteur", "Passeur", "Décisif"]:
+                        val_str = str(row[col])
+                        if "%" in val_str:
+                            try:
+                                p_val = float(val_str.split("%")[0])
+                                if p_val >= 35:
+                                    styles[col] = "background-color: #d4edda; color: #155724; font-weight: bold;"
+                            except Exception:
+                                pass
+                    return styles
 
-                for col in ["Buteur", "Passeur", "Décisif"]:
-                    if probs[col] == max_val and max_val > 0:
-                        styles[col] = (
-                            "background-color: #d4edda; color: #155724;"
-                            " text-align: center;"
-                        )
-                    else:
-                        styles[col] = "text-align: center;"
-                return styles
+                styled_df = df_unified.style.apply(highlight_top_percentages, axis=1)
 
-            styled_scorers = df_scorers.style.apply(highlight_max_scorer, axis=1)
-
-            col_sc_box, _ = st.columns([4, 2])
-            with col_sc_box:
                 st.dataframe(
-                    styled_scorers,
+                    styled_df,
                     column_order=["Joueur", "Buteur", "Passeur", "Décisif"],
                     use_container_width=True,
                     hide_index=True,
                 )
+            else:
+                st.info("Aucun joueur individuel ne correspond à votre recherche.")
         else:
-            st.info("Cotes des buteurs indisponibles.")
+            st.info("Cotes des joueurs indisponibles.")
