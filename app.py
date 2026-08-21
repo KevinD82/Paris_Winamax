@@ -21,6 +21,25 @@ def load_matches():
     return get_football_matches()
 
 
+# --- FONCTION SCORE DE CONFIANCE ---
+def calculate_confidence_score(stats_h, stats_a, prob_ia, cote_book):
+    # Calcul de la volatilité (écart-type des buts marqués sur les 5 derniers matchs)
+    h_std = np.std(stats_h["goals_scored"][-5:])
+    a_std = np.std(stats_a["goals_scored"][-5:])
+    volatility = (h_std + a_std) / 2
+    
+    # Score de base : plus la volatilité est haute, plus le score baisse
+    score = 80 - (volatility * 15)
+    
+    # Bonus si l'écart de probabilité est important (Value forte)
+    prob_book = 1 / cote_book
+    diff = abs(prob_ia - prob_book)
+    if diff > 0.10:
+        score += 20
+        
+    return int(max(0, min(100, score)))
+
+
 st.title("⚽ Winamax Betting & ML Analyzer")
 
 model_data = load_ml_model()
@@ -35,7 +54,7 @@ else:
         if "league" not in df_matches.columns:
             df_matches["league"] = "Autre / International"
 
-    # --- NOUVEL ORDRE DE LA SIDEBAR ---
+    # --- SIDEBAR (SÉLECTION PAR DATE, CHAMPIONNAT, MATCH, PUIS BANKROLL) ---
     st.sidebar.header("🔍 Filtres & Sélection")
 
     # 1. Date
@@ -74,7 +93,7 @@ else:
         df_filtered_league["display_name"] == selected_display
     ].iloc[0]
 
-    # 4. Bankroll Management (Déplacé tout en bas de la sidebar)
+    # 4. Bankroll Management (Positionné tout en bas)
     st.sidebar.divider()
     st.sidebar.header("💰 Bankroll Management")
     bankroll = st.sidebar.number_input(
@@ -95,7 +114,7 @@ else:
         index=0,
     )
     st.sidebar.caption(
-        "Le critère de Kelly calcule la mise optimale pour faire croître ton capital sans risquer la faillite."
+        "Le critère de Kelly calcule la mise optimale. Elle est automatiquement pondérée par le score de confiance."
     )
     st.sidebar.divider()
 
@@ -144,37 +163,20 @@ else:
                     p_1n2 = model_data["model_1n2"].predict_proba(X_m)[0]
                     p_N, p_1, p_2 = p_1n2[0], p_1n2[1], p_1n2[2]
 
-                    e_1 = (p_1 * r_match["cote_1"]) - 1
-                    e_N = (p_N * r_match["cote_N"]) - 1
-                    e_2 = (p_2 * r_match["cote_2"]) - 1
+                    outcomes = [
+                        (f"Victoire {h_team}", p_1, r_match["cote_1"]),
+                        ("Match Nul", p_N, r_match["cote_N"]),
+                        (f"Victoire {a_team}", p_2, r_match["cote_2"]),
+                    ]
 
-                    best_ev = max(e_1, e_N, e_2)
-                    if best_ev > 0.05:
-                        if best_ev == e_1:
-                            b_type, b_cote, b_prob, _ = (
-                                f"Victoire {h_team}",
-                                r_match["cote_1"],
-                                p_1,
-                                h_team,
-                            )
-                        elif best_ev == e_N:
-                            b_type, b_cote, b_prob, _ = (
-                                "Match Nul",
-                                r_match["cote_N"],
-                                p_N,
-                                "Nul",
-                            )
-                        else:
-                            b_type, b_cote, b_prob, _ = (
-                                f"Victoire {a_team}",
-                                r_match["cote_2"],
-                                p_2,
-                                a_team,
-                            )
+                    for b_type, b_prob, b_cote in outcomes:
+                        ev = (b_prob * b_cote) - 1
+                        if ev > 0.05 and b_prob >= 0.40:
+                            conf = calculate_confidence_score(h_stats, a_stats, b_prob, b_cote)
+                            kelly_f = ((b_prob * b_cote) - 1) / (b_cote - 1)
+                            # Mise pondérée par le score de confiance
+                            k_stake = max(0.0, bankroll * kelly_f * kelly_fraction) * (conf / 100)
 
-                        if b_prob >= 0.40:
-                            k_f = ((b_prob * b_cote) - 1) / (b_cote - 1)
-                            k_stake = max(0.0, bankroll * k_f * kelly_fraction)
                             all_day_bets.append({
                                 "Compétition": r_match["league"],
                                 "Match": m_name,
@@ -182,17 +184,18 @@ else:
                                 "Pari conseillé": b_type,
                                 "Cote": b_cote,
                                 "Probabilité IA": f"{b_prob * 100:.1f}%",
-                                "EV (Value)": f"+{best_ev * 100:.1f}%",
+                                "Score Confiance": f"{conf}%",
+                                "EV (Value)": f"+{ev * 100:.1f}%",
                                 "Mise conseillée": f"{k_stake:.2f} € ({k_stake / bankroll * 100:.1f}% cap.)",
-                                "_ev_val": best_ev,
+                                "_conf": conf,
+                                "_ev": ev,
                             })
 
         if all_day_bets:
             df_all_bets = (
-                pd
-                .DataFrame(all_day_bets)
-                .sort_values(by="_ev_val", ascending=False)
-                .drop(columns=["_ev_val"])
+                pd.DataFrame(all_day_bets)
+                .sort_values(by="_conf", ascending=False)
+                .drop(columns=["_conf", "_ev"])
             )
             st.dataframe(df_all_bets, use_container_width=True, hide_index=True)
         else:
@@ -202,6 +205,7 @@ else:
 
     st.divider()
 
+    # --- AFFICHAGE DU MATCH SÉLECTIONNÉ ---
     st.caption(f"🏆 **Compétition :** {match_data['league']}")
     st.header(f"⚽ {match_data['match']}")
 
@@ -215,6 +219,7 @@ else:
 
     prob_1, prob_N, prob_2 = None, None, None
     prob_btts_oui, prob_btts_non = None, None
+    h_stats, a_stats = None, None
 
     if model_data and " - " in match_data["match"]:
         home_team, away_team = match_data["match"].split(" - ", 1)
@@ -289,7 +294,7 @@ else:
         st.subheader("🌟 Récapitulatif des meilleurs paris recommandés")
         best_recommendations = []
 
-        if prob_1:
+        if prob_1 and h_stats and a_stats:
             best_1n2_ev = max(ev_1, ev_N, ev_2)
             best_1n2_prob = (
                 prob_1
@@ -312,8 +317,9 @@ else:
                     )
                 )
 
+                conf_1n2 = calculate_confidence_score(h_stats, a_stats, best_1n2_prob, best_cote)
                 kelly_f = ((best_1n2_prob * best_cote) - 1) / (best_cote - 1)
-                kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
+                kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction) * (conf_1n2 / 100)
 
                 best_recommendations.append({
                     "Type": "Résultat 1N2",
@@ -322,37 +328,42 @@ else:
                     else "Match Nul",
                     "Cote": best_cote,
                     "Probabilité": f"{best_1n2_prob * 100:.1f}%",
+                    "Confiance": f"{conf_1n2}%",
                     "EV (Value)": f"+{best_1n2_ev * 100:.1f}%",
                     "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                 })
 
         btts_odds = extra_bets.get("btts")
-        if btts_odds and prob_btts_oui:
+        if btts_odds and prob_btts_oui and h_stats and a_stats:
             cote_b_oui = btts_odds.get("Oui")
             cote_b_non = btts_odds.get("Non")
             if cote_b_oui:
                 ev_b_oui = (prob_btts_oui * cote_b_oui) - 1
                 if ev_b_oui > 0.05:
+                    conf_btts = calculate_confidence_score(h_stats, a_stats, prob_btts_oui, cote_b_oui)
                     kelly_f = ((prob_btts_oui * cote_b_oui) - 1) / (cote_b_oui - 1)
-                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
+                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction) * (conf_btts / 100)
                     best_recommendations.append({
                         "Type": "Les 2 équipes marquent",
                         "Pari": "Oui",
                         "Cote": cote_b_oui,
                         "Probabilité": f"{prob_btts_oui * 100:.1f}%",
+                        "Confiance": f"{conf_btts}%",
                         "EV (Value)": f"+{ev_b_oui * 100:.1f}%",
                         "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                     })
             if cote_b_non:
                 ev_b_non = (prob_btts_non * cote_b_non) - 1
                 if ev_b_non > 0.05:
+                    conf_btts_n = calculate_confidence_score(h_stats, a_stats, prob_btts_non, cote_b_non)
                     kelly_f = ((prob_btts_non * cote_b_non) - 1) / (cote_b_non - 1)
-                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction)
+                    kelly_stake = max(0.0, bankroll * kelly_f * kelly_fraction) * (conf_btts_n / 100)
                     best_recommendations.append({
                         "Type": "Les 2 équipes marquent",
                         "Pari": "Non",
                         "Cote": cote_b_non,
                         "Probabilité": f"{prob_btts_non * 100:.1f}%",
+                        "Confiance": f"{conf_btts_n}%",
                         "EV (Value)": f"+{ev_b_non * 100:.1f}%",
                         "Mise conseillée": f"{kelly_stake:.2f} € ({kelly_stake / bankroll * 100:.1f}% du capital)",
                     })
